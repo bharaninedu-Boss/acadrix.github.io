@@ -80,7 +80,7 @@
     const seen=new Set(), unique=[];
     ranked.forEach(x=>{const k=`${x.item.regulation}|${x.item.dept}|${x.item.sem}|${x.item.code}`;if(!seen.has(k)&&unique.length<12){seen.add(k);unique.push(x.item);}});
     results.innerHTML=unique.length ? unique.map(s=>{
-      const route=`#/dept/${s.dept}/${s.regulation}/sem${s.sem}/${encodeURIComponent(s.code)}`;
+      const route=s.dept==='mech' ? `#/dept/${s.dept}/${s.regulation}/sem${s.sem}/${encodeURIComponent(s.code)}` : `#/dept/${s.dept}/sem${s.sem}/${encodeURIComponent(s.code)}`;
       const matchedTopic=s.topics.find(t=>t.title.toLowerCase().includes(q));
       return `<a class="search-item" href="${route}" role="option"><strong>${esc(s.code||s.name)}</strong><br><small>${esc(s.name)} · ${s.regulation.toUpperCase()} · Semester ${s.sem}${matchedTopic ? ` · Unit ${matchedTopic.unit}` : ''}</small></a>`;
     }).join('') : '<div class="search-item"><strong>No results found</strong><br><small>Try a subject code, subject name, unit topic, regulation, semester or resource.</small></div>';
