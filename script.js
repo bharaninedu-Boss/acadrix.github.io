@@ -482,7 +482,7 @@ function renderExamPrep(subject) {
 }
 
 // Search Logic with lazy indexing across all departments
-async function handleSearch() {
+async async function handleSearch() {
     const input = document.getElementById('searchInput');
     if (!input) return;
     const query = (input.value || '').trim().toLowerCase();
