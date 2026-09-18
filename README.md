@@ -50,4 +50,4 @@ R-2025 and R-2021 Mechanical Engineering resources remain separate. PDF folders 
 `https://bharaninedu-boss.github.io/Acadrix/`
 
 ## Repository
-`https://github.com/bharaninedu-Boss/Acadrix`
+`https://github.com/bharaninedu-Boss/acadrix.github.io`
