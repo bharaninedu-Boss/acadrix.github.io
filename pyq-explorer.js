@@ -9,10 +9,11 @@
     const hash = location.hash.replace(/^#\/?/, '');
     const parts = hash.split('/').filter(Boolean);
     const dept = parts[1] || '';
-    const regulation = parts[2] || 'r2021';
+    const regulationPart = parts.find(p => /^r202[15]$/i.test(p));
+    const regulation = regulationPart ? regulationPart.toLowerCase() : 'r2021';
     const semMatch = (parts.find(p => /^sem\d+$/i.test(p)) || '').match(/sem(\d+)/i);
     const sem = semMatch ? Number(semMatch[1]) : null;
-    return { dept, regulation: regulation.toLowerCase(), sem };
+    return { dept, regulation, sem };
   }
 
   function dataPath(ctx) {
