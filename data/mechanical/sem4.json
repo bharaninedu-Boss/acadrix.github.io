@@ -1,25 +1,11 @@
 [
-  {
-    "code": "ME4301",
-    "name": "THERMAL ENGINEERING",
-    "updated": "2026-08-29",
-    "units": [
-      {"name": "Basic Concepts and Properties of Pure Substances", "notes": "#"},
-      {"name": "Gas Power Cycles", "notes": "#"},
-      {"name": "Steam Power Cycles", "notes": "#"},
-      {"name": "Internal Combustion Engines", "notes": "#"},
-      {"name": "Refrigeration and Air-Conditioning", "notes": "#"},
-      {"name": "Combustion and Heat Transfer", "notes": "#"}
-    ],
-    "pyqs": [
-      {"year": "Most Recent", "link": "data/mechanical/THERMAL%20ENGINEERING.pdf"}
-    ],
-    "videos": [
-      {"title": "Thermal Engineering — Lecture Series (Intro)", "channel": "Example Channel", "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"}
-    ],
-    "questionBank": "#",
-    "importantQuestions": "#",
-    "formulaSheet": "#",
-    "solvedProblems": "#"
-  }
+  {"code":"ME3491","name":"Theory of Machines","credits":3,"category":"PCC","official":true,"popular":true},
+  {"code":"ME3451","name":"Thermal Engineering","credits":4,"category":"PCC","official":true,"popular":true},
+  {"code":"ME3492","name":"Hydraulics and Pneumatics","credits":3,"category":"PCC","official":true},
+  {"code":"ME3493","name":"Manufacturing Technology","credits":3,"category":"PCC","official":true},
+  {"code":"CE3491","name":"Strength of Materials","credits":3,"category":"PCC","official":true,"popular":true},
+  {"code":"GE3451","name":"Environmental Sciences and Sustainability","credits":2,"category":"BSC","official":true},
+  {"code":"NCC Credit Course Level 2","name":"NCC Credit Course Level 2","credits":3,"category":"NCC","official":true,"conditional":true,"note":"Offered for NCC students only; grades are recorded but not considered for CGPA computation."},
+  {"code":"CE3481","name":"Strength of Materials and Fluid Machinery Laboratory","credits":2,"category":"PCC","official":true},
+  {"code":"ME3461","name":"Thermal Engineering Laboratory","credits":2,"category":"PCC","official":true}
 ]
