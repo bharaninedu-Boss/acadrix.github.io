@@ -1,12 +1,74 @@
 [
-  {"code":"IP3151","name":"Induction Programme","credits":0,"category":"","official":true},
-  {"code":"HS3152","name":"Professional English - I","credits":3,"category":"HSMC","official":true},
-  {"code":"MA3151","name":"Matrices and Calculus","credits":4,"category":"BSC","official":true,"popular":true},
-  {"code":"PH3151","name":"Engineering Physics","credits":3,"category":"BSC","official":true},
-  {"code":"CY3151","name":"Engineering Chemistry","credits":3,"category":"BSC","official":true},
-  {"code":"GE3151","name":"Problem Solving and Python Programming","credits":3,"category":"ESC","official":true},
-  {"code":"GE3152","name":"Heritage of Tamils","credits":1,"category":"HSMC","official":true},
-  {"code":"GE3171","name":"Problem Solving and Python Programming Laboratory","credits":2,"category":"ESC","official":true},
-  {"code":"BS3171","name":"Physics and Chemistry Laboratory","credits":2,"category":"BSC","official":true},
-  {"code":"GE3172","name":"English Laboratory","credits":1,"category":"EEC","official":true,"note":"Skill Based Course."}
+  {
+    "code": "IP3151",
+    "name": "Induction Programme",
+    "credits": 0,
+    "category": "",
+    "official": true
+  },
+  {
+    "code": "HS3151",
+    "name": "Professional English - I",
+    "credits": 4,
+    "category": "HSMC",
+    "official": true
+  },
+  {
+    "code": "MA3151",
+    "name": "Matrices and Calculus",
+    "credits": 4,
+    "category": "BSC",
+    "official": true,
+    "popular": true
+  },
+  {
+    "code": "PH3151",
+    "name": "Engineering Physics",
+    "credits": 3,
+    "category": "BSC",
+    "official": true
+  },
+  {
+    "code": "CY3151",
+    "name": "Engineering Chemistry",
+    "credits": 3,
+    "category": "BSC",
+    "official": true
+  },
+  {
+    "code": "GE3151",
+    "name": "Problem Solving and Python Programming",
+    "credits": 3,
+    "category": "ESC",
+    "official": true
+  },
+  {
+    "code": "GE3152",
+    "name": "Heritage of Tamils",
+    "credits": 1,
+    "category": "HSMC",
+    "official": true
+  },
+  {
+    "code": "GE3171",
+    "name": "Problem Solving and Python Programming Laboratory",
+    "credits": 2,
+    "category": "ESC",
+    "official": true
+  },
+  {
+    "code": "BS3171",
+    "name": "Physics and Chemistry Laboratory",
+    "credits": 2,
+    "category": "BSC",
+    "official": true
+  },
+  {
+    "code": "GE3172",
+    "name": "English Laboratory",
+    "credits": 1,
+    "category": "EEC",
+    "official": true,
+    "note": "Skill Based Course."
+  }
 ]
