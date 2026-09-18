@@ -3,9 +3,9 @@
    Upload to: data/pdfs/<department>/<regulation>/sem<semester>/<subject-code>/<category>/
 */
 (function(){
-  const API='https://api.github.com/repos/bharaninedu-Boss/Acadrix/contents/';
+  const API='https://api.github.com/repos/bharaninedu-Boss/acadrix.github.io/contents/';
   const SITE='https://bharaninedu-boss.github.io/Acadrix/';
-  const REPO='https://github.com/bharaninedu-Boss/Acadrix/tree/main/';
+  const REPO='https://github.com/bharaninedu-Boss/acadrix.github.io/tree/main/';
   const previous=window.renderSubjectDetails;
   if(typeof previous!=='function') return;
   const CATEGORIES=[
