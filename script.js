@@ -378,7 +378,7 @@ async function renderSubjectDetails(container, code) {
 
     container.innerHTML = `
         <div class="breadcrumb"><span onclick="navigateTo('home')">Home</span> &nbsp;›&nbsp; <span onclick="navigateTo('semesters',{dept:'${deptObj.id || 'mech'}}')">${deptObj.name}</span> &nbsp;›&nbsp; <span onclick="navigateTo('subjects',{dept:'${deptObj.id || 'mech'}',sem:${sem}})">${sem && 'Semester ' + sem}</span> &nbsp;›&nbsp; <span>${subject.code}</span></div>
-        <button class="back-btn" onclick="window.history.back()">← Back</button>
+        <button class="back-btn" onclick="navigateTo('subjects',{dept:'${deptObj.id || 'mech'}',sem:${sem}${(deptObj.id || 'mech') === 'mech' ? ",regulation:'r2021'" : ''}})">← Back</button>
         <div class="subject-header">
             <p>${subject.code || ''}</p>
             <h1>${subject.name || ''}</h1>
