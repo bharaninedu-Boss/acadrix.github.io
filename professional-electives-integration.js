@@ -69,12 +69,66 @@
         grid.appendChild(card);
     }
 
-    function init() {
-        addProfessionalElectivesCard();
+    function getR2021Semester() {
+        const hash = (location.hash || '').toLowerCase();
+        const match = hash.match(/^#\/dept\/mech\/r2021\/sem(5|6|7)(?:\/|$)/);
+        return match ? Number(match[1]) : null;
+    }
+
+    function removeSemesterElectivesCard() {
         const app = document.getElementById('app');
         if (!app) return;
-        new MutationObserver(addProfessionalElectivesCard).observe(app, { childList: true, subtree: true });
-        window.addEventListener('hashchange', addProfessionalElectivesCard);
+        const card = app.querySelector('[data-acadrix-sem-pe-card]');
+        if (card) card.remove();
+    }
+
+    function addSemesterElectivesCard() {
+        const app = document.getElementById('app');
+        if (!app) return;
+
+        const semester = getR2021Semester();
+        if (!semester) {
+            removeSemesterElectivesCard();
+            return;
+        }
+
+        const grid = app.querySelector('#subjectsGrid');
+        if (!grid || !grid.classList.contains('grid')) return;
+        if (grid.querySelector('[data-acadrix-sem-pe-card]')) return;
+
+        const card = document.createElement('a');
+        card.href = PE_URL + '#sem' + semester;
+        card.className = 'card pe-entry-card';
+        card.setAttribute('data-acadrix-sem-pe-card', 'true');
+        card.setAttribute('aria-label', 'Open Professional Electives for Semester ' + semester);
+        card.innerHTML = `
+            <div>
+                <p class="pe-entry-label">PROFESSIONAL ELECTIVES · R-2021</p>
+                <h3>Semester ${semester} Professional Electives</h3>
+                <p>Open the dedicated elective hub for Semester ${semester}, including elective sections and available study resources.</p>
+                <div class="pe-entry-tags">
+                    <span>Semester ${semester}</span>
+                    <span>Elective Hub</span>
+                </div>
+            </div>
+            <div class="arrow" aria-hidden="true">→</div>
+        `;
+        grid.insertBefore(card, grid.firstChild);
+    }
+
+    function init() {
+        addProfessionalElectivesCard();
+        addSemesterElectivesCard();
+        const app = document.getElementById('app');
+        if (!app) return;
+        new MutationObserver(() => {
+            addProfessionalElectivesCard();
+            addSemesterElectivesCard();
+        }).observe(app, { childList: true, subtree: true });
+        window.addEventListener('hashchange', () => {
+            addProfessionalElectivesCard();
+            addSemesterElectivesCard();
+        });
     }
 
     if (document.readyState === 'loading') {
