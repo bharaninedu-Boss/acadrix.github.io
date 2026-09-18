@@ -5,7 +5,7 @@
 
 const DEPARTMENTS = [
     { id: "mech", name: "Mechanical Engineering", icon: "⚙️", folder: "mechanical" },
-    { id: "cse", name: "Computer Science", icon: "💻", folder: "computer" },
+    { id: "cse", name: "Computer Science", icon: "💻", folder: "cse" },
     { id: "ece", name: "Electronics & Communication", icon: "📟", folder: "electronics" },
     { id: "eee", name: "Electrical & Electronics", icon: "⚡", folder: "electrical" },
     { id: "it", name: "Information Technology", icon: "🌐", folder: "it" },
