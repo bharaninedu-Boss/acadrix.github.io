@@ -6,9 +6,10 @@ const AVAILABLE_RESOURCES = {
     CME365: 'CME365.html', CME372: 'CME372.html', CME380: 'CME380.html', CME387: 'CME387.html'
 };
 
+// Semester VII core resources live in the main Mechanical data namespace.
 const SEM7_RESOURCES = {
-    ME3791: 'ME3791.html', ME3792: 'ME3792.html', GE3791: 'GE3791.html', GE3792: 'GE3792.html',
-    ME3781: 'ME3781.html', ME3711: 'ME3711.html'
+    ME3791: '../sem7/ME3791.html', ME3792: '../sem7/ME3792.html', GE3791: '../sem7/GE3791.html', GE3792: '../sem7/GE3792.html',
+    ME3781: '../sem7/ME3781.html', ME3711: '../sem7/ME3711.html'
 };
 
 const SEM7_SUBJECTS = [
