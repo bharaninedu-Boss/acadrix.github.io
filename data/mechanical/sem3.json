@@ -1,11 +1,68 @@
 [
-  {"code":"MA3351","name":"Transforms and Partial Differential Equations","credits":4,"category":"BSC","official":true},
-  {"code":"ME3351","name":"Engineering Mechanics","credits":4,"category":"PCC","official":true,"popular":true},
-  {"code":"ME3391","name":"Engineering Thermodynamics","credits":4,"category":"PCC","official":true,"popular":true},
-  {"code":"CE3391","name":"Fluid Mechanics and Machinery","credits":4,"category":"PCC","official":true,"popular":true},
-  {"code":"ME3392","name":"Engineering Materials and Metallurgy","credits":3,"category":"PCC","official":true},
-  {"code":"ME3393","name":"Manufacturing Processes","credits":3,"category":"PCC","official":true},
-  {"code":"ME3381","name":"Computer Aided Machine Drawing","credits":2,"category":"PCC","official":true},
-  {"code":"ME3382","name":"Manufacturing Technology Laboratory","credits":2,"category":"PCC","official":true},
-  {"code":"GE3361","name":"Professional Development","credits":1,"category":"EEC","official":true}
+  {
+    "code": "MA3351",
+    "name": "Transforms and Partial Differential Equations",
+    "credits": 4,
+    "category": "BSC",
+    "official": true
+  },
+  {
+    "code": "ME3351",
+    "name": "Engineering Mechanics",
+    "credits": 3,
+    "category": "ESC",
+    "official": true,
+    "popular": true
+  },
+  {
+    "code": "ME3391",
+    "name": "Engineering Thermodynamics",
+    "credits": 4,
+    "category": "PCC",
+    "official": true,
+    "popular": true
+  },
+  {
+    "code": "CE3391",
+    "name": "Fluid Mechanics and Machinery",
+    "credits": 4,
+    "category": "ESC",
+    "official": true,
+    "popular": true
+  },
+  {
+    "code": "ME3392",
+    "name": "Engineering Materials and Metallurgy",
+    "credits": 3,
+    "category": "PCC",
+    "official": true
+  },
+  {
+    "code": "ME3393",
+    "name": "Manufacturing Processes",
+    "credits": 3,
+    "category": "PCC",
+    "official": true
+  },
+  {
+    "code": "ME3381",
+    "name": "Computer Aided Machine Drawing",
+    "credits": 2,
+    "category": "ESC",
+    "official": true
+  },
+  {
+    "code": "ME3382",
+    "name": "Manufacturing Technology Laboratory",
+    "credits": 2,
+    "category": "PCC",
+    "official": true
+  },
+  {
+    "code": "GE3361",
+    "name": "Professional Development",
+    "credits": 1,
+    "category": "EEC",
+    "official": true
+  }
 ]
