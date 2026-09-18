@@ -63,13 +63,23 @@ function initMenuToggle() {
 
 function toggleMenu() {
     const nav = document.getElementById('navLinks');
+    const toggle = document.getElementById('menuToggle');
     if (!nav) return;
-    nav.classList.toggle('open');
+    const isOpen = nav.classList.toggle('open');
+    if (toggle) {
+        toggle.setAttribute('aria-expanded', String(isOpen));
+        toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    }
 }
 
 function closeMenu() {
     const nav = document.getElementById('navLinks');
+    const toggle = document.getElementById('menuToggle');
     if (nav) nav.classList.remove('open');
+    if (toggle) {
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Open menu');
+    }
 }
 
 // Hash routing parser
