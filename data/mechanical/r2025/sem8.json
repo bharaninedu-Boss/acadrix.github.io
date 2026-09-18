@@ -1,8 +1,9 @@
 {
   "regulation": "R-2025",
-  "program": "B.E. Mechanical Engineering",
+  "program": "B.E. Mechanical Engineering (specialised in Smart Manufacturing)",
   "semester": 8,
-  "source": "https://cac.annauniv.edu/aidetails/afug_2025_fu/Mech/B.E.%20Mechanical%20Engineering.pdf",
+  "source": "https://cac.annauniv.edu/aidetails/afug_2025_fu/Mech/B.E.%2C%20Mechanical%20Engineering%20%28specialised%20in%20Smart%20Mfg..pdf",
   "status": "structure-ready",
-  "subjects": []
+  "subjects": [],
+  "note": "Official curriculum source is recorded, but this semester has not been independently verified from the source. ACADRIX intentionally leaves it unpopulated rather than inventing curriculum data."
 }
