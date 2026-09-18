@@ -1,10 +1,76 @@
 [
-  {"code":"HS3252","name":"Professional English - II","credits":3,"category":"HSMC","official":true},
-  {"code":"MA3251","name":"Statistics and Numerical Methods","credits":4,"category":"BSC","official":true,"popular":true},
-  {"code":"PH3251","name":"Materials Science","credits":3,"category":"BSC","official":true},
-  {"code":"BE3251","name":"Basic Electrical and Electronics Engineering","credits":3,"category":"ESC","official":true},
-  {"code":"GE3251","name":"Engineering Graphics","credits":4,"category":"ESC","official":true},
-  {"code":"GE3271","name":"Engineering Practices Laboratory","credits":2,"category":"ESC","official":true},
-  {"code":"BE3271","name":"Basic Electrical and Electronics Engineering Laboratory","credits":2,"category":"ESC","official":true},
-  {"code":"GE3272","name":"Communication Laboratory / Foreign Language","credits":2,"category":"EEC","official":true,"note":"Skill Based Course."}
+  {
+    "code": "HS3251",
+    "name": "Professional English - II",
+    "credits": 2,
+    "category": "HSMC",
+    "official": true
+  },
+  {
+    "code": "MA3251",
+    "name": "Statistics and Numerical Methods",
+    "credits": 4,
+    "category": "BSC",
+    "official": true,
+    "popular": true
+  },
+  {
+    "code": "PH3251",
+    "name": "Materials Science",
+    "credits": 3,
+    "category": "BSC",
+    "official": true
+  },
+  {
+    "code": "BE3251",
+    "name": "Basic Electrical and Electronics Engineering",
+    "credits": 3,
+    "category": "ESC",
+    "official": true
+  },
+  {
+    "code": "GE3251",
+    "name": "Engineering Graphics",
+    "credits": 4,
+    "category": "ESC",
+    "official": true
+  },
+  {
+    "code": "GE3252",
+    "name": "Heritage of Tamils",
+    "credits": 1,
+    "category": "HSMC",
+    "official": true
+  },
+  {
+    "code": "NCC Credit Course Level 1",
+    "name": "NCC Credit Course Level 1",
+    "credits": 2,
+    "category": "NCC",
+    "official": true,
+    "conditional": true,
+    "note": "Offered for NCC students only; grades are recorded but not considered for CGPA computation."
+  },
+  {
+    "code": "GE3271",
+    "name": "Engineering Practices Laboratory",
+    "credits": 2,
+    "category": "ESC",
+    "official": true
+  },
+  {
+    "code": "BE3271",
+    "name": "Basic Electrical and Electronics Engineering Laboratory",
+    "credits": 2,
+    "category": "ESC",
+    "official": true
+  },
+  {
+    "code": "GE3272",
+    "name": "Communication Laboratory / Foreign Language",
+    "credits": 2,
+    "category": "EEC",
+    "official": true,
+    "note": "Skill Based Course."
+  }
 ]
