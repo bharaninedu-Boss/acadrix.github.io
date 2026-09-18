@@ -43,10 +43,10 @@
 
     first.insertAdjacentElement('afterend', section);
     section.querySelector('[data-nav="mech-sem5"]').addEventListener('click', () => {
-      navigateTo('subjects', { dept: 'mech', sem: 5 });
+      navigateTo('subjects', { dept: 'mech', sem: 5, regulation: 'r2021' });
     });
     section.querySelector('[data-nav="mech-me3591"]').addEventListener('click', () => {
-      navigateTo('details', { dept: 'mech', sem: 5, subjectCode: 'ME3591' });
+      navigateTo('details', { dept: 'mech', sem: 5, subjectCode: 'ME3591', regulation: 'r2021' });
     });
   }
 
