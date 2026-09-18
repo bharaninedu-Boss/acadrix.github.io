@@ -18,7 +18,7 @@
     if (/^r20\d+$/i.test(p[2])) { regulation=p[2].toLowerCase(); sem=Number(String(p[3]).replace(/^sem/i,'')); code=p[4]; }
     else { sem=Number(String(p[2]).replace(/^sem/i,'')); code=p[3]; }
     if (!Number.isInteger(sem) || sem<1 || sem>8 || !code) return null;
-    return {dept:p[1].toLowerCase(),regulation,sem,code:decodeURIComponent(code).toUpperCase()};
+    let decoded;try{decoded=decodeURIComponent(code)}catch(_){return null} return {dept:p[1].toLowerCase(),regulation,sem,code:decoded.toUpperCase()};
   }
   function path(r) {
     if (r.dept==='mech') return `${r.regulation==='r2025'?'data/mechanical/r2025':'data/mechanical'}/sem${r.sem}.json`;
