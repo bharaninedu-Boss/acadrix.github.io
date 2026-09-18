@@ -487,23 +487,33 @@ async function handleSearch() {
         searchIndex = [];
         for (const dept of DEPARTMENTS) {
             for (let i = 1; i <= 8; i++) {
-                const arr = await loadSemesterData(dept.id, i);
-                arr.forEach(s => {
-                    searchIndex.push({ ...s, dept: dept.id, deptName: dept.name, sem: i });
-                });
+                if (dept.id === 'mech' && typeof loadSemesterData === 'function') {
+                    for (const regulation of ['r2021', 'r2025']) {
+                        const arr = await loadSemesterData(dept.id, i, regulation);
+                        arr.forEach(s => searchIndex.push({
+                            ...s, dept: dept.id, deptName: dept.name, sem: i, regulation
+                        }));
+                    }
+                } else {
+                    const arr = await loadSemesterData(dept.id, i);
+                    arr.forEach(s => searchIndex.push({
+                        ...s, dept: dept.id, deptName: dept.name, sem: i, regulation: 'r2021'
+                    }));
+                }
             }
         }
     }
 
     const matches = [];
     searchIndex.forEach(s => {
-        if (s.code && s.code.toLowerCase().includes(query)) matches.push({ type: 'subject', item: s });
-        else if (s.name && s.name.toLowerCase().includes(query)) matches.push({ type: 'subject', item: s });
-        else if (s.deptName && s.deptName.toLowerCase().includes(query)) matches.push({ type: 'dept', item: s });
-        // search units
+        const code = String(s.code || '').toLowerCase();
+        const name = String(s.name || '').toLowerCase();
+        if (code.includes(query) || name.includes(query)) {
+            matches.push({ type: 'subject', item: s });
+        }
         (s.units || []).forEach((u, idx) => {
-            const uname = typeof u === 'string' ? u : u.name || '';
-            if (uname.toLowerCase().includes(query)) {
+            const uname = typeof u === 'string' ? u : (u.name || u.title || '');
+            if (String(uname).toLowerCase().includes(query)) {
                 matches.push({ type: 'unit', item: s, unitIndex: idx });
             }
         });
@@ -511,41 +521,28 @@ async function handleSearch() {
 
     if (matches.length > 0 && resultsDiv) {
         resultsDiv.innerHTML = matches.map(m => {
+            const reg = m.item.regulation === 'r2025' ? 'R-2025' : 'R-2021';
+            const safeCode = String(m.item.code || '').replace(/'/g, "\\'");
             if (m.type === 'subject') {
-                return `<div class="search-item" onclick="selectSearch('${m.item.code}', ${m.item.sem}, '${m.item.dept}')"><strong>${m.item.code}</strong><br><small>${m.item.name}</small></div>`;
-            } else if (m.type === 'unit') {
-                const u = m.item.units[m.unitIndex];
-                const uName = typeof u === 'string' ? u : u.name || '';
-                return `<div class="search-item" onclick="selectSearch('${m.item.code}', ${m.item.sem}, '${m.item.dept}', ${m.unitIndex})"><strong>${m.item.code} — Unit ${m.unitIndex+1}</strong><br><small>${uName}</small></div>`;
-            } else {
-                return `<div class="search-item" onclick="selectSearch('${m.item.code}', ${m.item.sem}, '${m.item.dept}')"><strong>${m.item.name}</strong><br><small>${m.item.deptName} • Semester ${m.item.sem}</small></div>`;
+                return `<div class="search-item" onclick="selectSearch('${safeCode}', ${m.item.sem}, '${m.item.dept}', null, '${m.item.regulation}')"><strong>${m.item.code}</strong><br><small>${m.item.name} • ${reg}</small></div>`;
             }
+            const u = m.item.units[m.unitIndex];
+            const uName = typeof u === 'string' ? u : (u.name || u.title || '');
+            return `<div class="search-item" onclick="selectSearch('${safeCode}', ${m.item.sem}, '${m.item.dept}', ${m.unitIndex}, '${m.item.regulation}')"><strong>${m.item.code} — Unit ${m.unitIndex + 1}</strong><br><small>${uName} • ${reg}</small></div>`;
         }).join('');
         resultsDiv.style.display = 'block';
     } else if (resultsDiv) {
-        // Show "No results" message
-        resultsDiv.innerHTML = `
-            <div style="text-align:center; padding:20px; color:var(--text-secondary); min-height:120px; display:flex; flex-direction:column; justify-content:center; align-items:center;">
-                <p style="font-size:1.1rem; font-weight:600; margin:0 0 8px 0">❌ No results found</p>
-                <p style="font-size:0.85rem; margin:0 0 12px 0">Try searching by:</p>
-                <div style="text-align:left; font-size:0.8rem; line-height:1.6;">
-                    <small>📍 Subject code (e.g., <strong>ME4301</strong>)</small><br>
-                    <small>📍 Subject name (e.g., <strong>Thermal</strong>)</small><br>
-                    <small>📍 Unit topic (e.g., <strong>thermodynamics</strong>)</small>
-                </div>
-            </div>
-        `;
+        resultsDiv.innerHTML = `<div style="text-align:center;padding:20px;color:var(--text-secondary);min-height:120px;display:flex;flex-direction:column;justify-content:center;align-items:center;"><p style="font-size:1.1rem;font-weight:600;margin:0 0 8px">❌ No results found</p><p style="font-size:0.85rem;margin:0">Try a subject code, name, or unit topic.</p></div>`;
         resultsDiv.style.display = 'block';
     }
 }
 
-function selectSearch(code, sem = 1, dept = 'mech', unitIndex = null) {
+function selectSearch(code, sem = 1, dept = 'mech', unitIndex = null, regulation = 'r2021') {
     const resultsDiv = document.getElementById('searchResults');
     if (resultsDiv) resultsDiv.style.display = 'none';
     const input = document.getElementById('searchInput');
     if (input) input.value = '';
-    navigateTo('details', { dept, sem, subjectCode: code });
-    // Optionally scroll to unit after page loads (future improvement)
+    navigateTo('details', { dept, sem, subjectCode: code, regulation });
 }
 
 // Exported for debugging
