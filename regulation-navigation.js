@@ -20,6 +20,10 @@ async function getAcadrxCatalog() {
 function isMechanical(deptId) { return deptId === 'mech'; }
 function regulationLabel(regulation) { return regulation === 'r2025' ? 'Regulation 2025' : 'Regulation 2021'; }
 function navigateRegulation(regulation) { location.hash = `#/dept/mech/${regulation}`; }
+function safeDecodeRoutePart(value) {
+    try { return decodeURIComponent(value); } catch (_) { return null; }
+}
+function validSemester(sem) { return Number.isInteger(sem) && sem >= 1 && sem <= 8; }
 function normalizeResourcePath(path, regulation='r2021') {
     if (!path) return path;
     if (/^(https?:|#|\/)/i.test(path) || path.startsWith('data/')) return path;
