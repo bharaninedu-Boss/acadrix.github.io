@@ -92,7 +92,14 @@ renderSubjectDetails=async function(container,code){
     const regulation=currentState.regulation||'r2021';if(!(currentState.dept==='mech'&&(regulation==='r2025'||regulation==='r2021')))return originalRenderSubjectDetails(container,code);
     const subjects=await loadSemesterData('mech',currentState.sem||1,regulation),subject=subjects.find(s=>s.code&&s.code.toLowerCase()===String(code).toLowerCase());
     if(!subject){container.innerHTML=`<div class="breadcrumb"><span onclick="navigateTo('home')">Home</span> › <span>${regulationLabel(regulation)} Subject</span></div><div class="card"><h2>Subject not found</h2><p>The requested subject is not present in this semester's verified data.</p></div>`;return;}
-    if(regulation==='r2021')return originalRenderSubjectDetails(container,code);
+    if(regulation==='r2021'){
+        // Keep the established R-2021 resource renderer, but normalize its state
+        // before rendering so shared/direct links retain the correct regulation.
+        const previous={...currentState};
+        currentState={...previous,regulation:'r2021'};
+        try { return await originalRenderSubjectDetails(container,code); }
+        finally { currentState=previous; }
+    }
     const units=Array.isArray(subject.units)?subject.units:[],cards=[];
     const resources=[['📚','Course Hub',subject.resource,'Open the dedicated subject resource page.'],['🎯','Important Questions',subject.importantQuestions,'Exam-focused questions.'],['📐','Formula Sheet',subject.formulaSheet,'Quick formula revision.'],['✅','Solved Problems',subject.solvedProblems,'Worked numerical problems.'],['🔁','Last-Day Revision',subject.lastDayRevision,'Fast final revision.'],['📄','Question Bank',subject.questionBank,'Practice questions.'],['⚡','1-Mark Question Bank','data/mechanical/r2025/one-mark/index.html','Dedicated R-2025 one-mark preparation and future quiz training.'],['🎯','12-Mark Preparation','data/mechanical/r2025/12-mark/index.html','Dedicated R-2025 long-answer preparation hub.']];
     resources.forEach(r=>{if(r[2]&&r[2]!=='#')cards.push(`<a class="card" href="${r[2]}"><strong>${r[0]} ${r[1]}</strong><p>${r[3]}</p><span class="arrow">→</span></a>`);});
