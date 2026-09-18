@@ -88,7 +88,11 @@ renderSubjects=async function(container,deptId,sem,regulation=null){
     const chosen=regulation||currentState.regulation||null;if(!isMechanical(deptId)||chosen!=='r2025')return originalRenderSubjects(container,deptId,sem);
     container.innerHTML=`<div class="breadcrumb"><span onclick="navigateTo('home')">Home</span> › <span onclick="navigateTo('semesters',{dept:'mech'})">Mechanical Engineering</span> › <span onclick="navigateTo('semesters',{dept:'mech',regulation:'r2025'})">Regulation 2025</span> › <span>Semester ${sem}</span></div><h2>R-2025 · Semester ${sem}</h2><div id="subjectsGrid" class="grid"><div class="card">Loading R-2025 subjects…</div></div>`;
     const subjects=await loadSemesterData(deptId,sem,'r2025'),grid=document.getElementById('subjectsGrid');
-    if(!subjects.length){grid.innerHTML=`<div class="card"><h3>Semester ${sem}</h3><p>Curriculum structure is reserved for R-2025. Study resources will be added without mixing R-2021 material.</p></div>`;return;}
+    if(!subjects.length){
+        const status = regulation==='r2025' ? 'structure-ready' : 'unverified';
+        grid.innerHTML=`<div class="card"><h3>Semester ${sem}</h3><p>R-2025 curriculum structure is reserved for this semester, but the subject list has not yet been independently verified.</p><p><strong>No R-2021 subjects are mixed into this page.</strong></p><small style="color:var(--text-secondary)">Status: ${status}</small></div>`;
+        return;
+    }
     grid.innerHTML=subjects.map(s=>{const code=String(s.code||'');const href=`#/dept/mech/r2025/sem${sem}/${encodeURIComponent(code)}`;return `<a class="card" href="${href}" aria-label="Open ${code} ${s.name||''}"><div><p style="color:var(--accent-color);font-weight:bold;margin:0">${code}</p><h3 style="margin:6px 0">${s.name||''}</h3><p style="margin:0;color:var(--text-secondary)">${s.resource?'Open Study Dashboard →':'Curriculum entry · resources coming soon'}</p></div><div class="arrow">→</div></a>`;}).join('');
 };
 
