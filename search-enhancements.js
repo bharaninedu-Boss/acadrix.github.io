@@ -24,7 +24,7 @@
     return path.startsWith('data/') ? path : `data/${path}`;
   }
 
-  async function semester(path, dept, sem, regulation) {
+  async function semester(path, dept, sem, regulation, index) {
     try {
       const res = await fetch(path);
       if (!res.ok) return;
@@ -45,13 +45,12 @@
     if (buildingIndex) return buildingIndex;
     buildingIndex = (async () => {
       const index = [];
-      globalThis.index = index;
+      
       for (const d of DEPTS) for (let sem=1; sem<=8; sem++) {
-        await semester(d.id === 'mech' ? `data/mechanical/sem${sem}.json` : `data/${d.folder}/sem${sem}.json`, d, sem, 'r2021');
+        await semester(d.id === 'mech' ? `data/mechanical/sem${sem}.json` : `data/${d.folder}/sem${sem}.json`, d, sem, 'r2021', index);
       }
-      for (let sem=1; sem<=8; sem++) await semester(`data/mechanical/r2025/sem${sem}.json`, DEPTS[0], sem, 'r2025');
-      cachedIndex = globalThis.index;
-      delete globalThis.index;
+      for (let sem=1; sem<=8; sem++) await semester(`data/mechanical/r2025/sem${sem}.json`, DEPTS[0], sem, 'r2025', index);
+      cachedIndex = index;
       return cachedIndex;
     })();
     return buildingIndex;
