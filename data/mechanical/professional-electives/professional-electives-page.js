@@ -8,9 +8,12 @@ const AVAILABLE_RESOURCES = {
 
 // Semester VII core resources live in the main Mechanical data namespace.
 // Semester VII curriculum entries are shown for reference.
-// Dedicated subject hubs do not exist in the repository yet, so they remain
-// non-clickable instead of exposing broken links.
-const SEM7_RESOURCES = {};
+// Existing Semester VII subject hubs are linked when a verified repository page exists; unavailable subjects remain non-clickable instead of exposing broken links.
+const SEM7_RESOURCES = {
+    ME3791: '../ME3791.html', ME3792: '../ME3792.html',
+    GE3791: '../GE3791.html', GE3792: '../GE3792.html',
+    ME3711: 'ME3711.html'
+};
 
 const SEM7_SUBJECTS = [
     ['ME3791', 'Mechatronics and IoT', 'Theory'], ['ME3792', 'Computer Integrated Manufacturing', 'Theory'],
