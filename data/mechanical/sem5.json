@@ -1,10 +1,156 @@
 [
-  {"code":"ME3591","name":"Design of Machine Elements","credits":4,"category":"PCC","official":true,"popular":true,"updated":"2026-09-06","units":[{"name":"Fundamental Concepts in Design","notes":"data/mechanical/ME3591_Unit1_Notes.html"},{"name":"Design of Shafts and Keys","notes":"data/mechanical/ME3591_Unit2_Notes.html"},{"name":"Design of Temporary and Permanent Joints","notes":"data/mechanical/ME3591_Unit3_Notes.html"},{"name":"Design of Energy Storing Elements and Engine Components","notes":"data/mechanical/ME3591_Unit4_Notes.html"},{"name":"Design of Bearings and Miscellaneous Elements","notes":"data/mechanical/ME3591_Unit5_Notes.html"}],"pyqs":[],"pyqStatus":"Not uploaded to the repository yet. Three ME3591 paper filenames were previously listed, but the corresponding PDF files are not present in GitHub, so ACADRIX does not expose broken links.","videos":[],"questionBank":null,"importantQuestions":"data/mechanical/ME3591_Important_Questions.html","formulaSheet":"data/mechanical/ME3591_Formula_Sheet.html","solvedProblems":"data/mechanical/ME3591_Solved_Problems.html","lastDayRevision":"data/mechanical/ME3591_Last_Day_Revision.html"},
-  {"code":"ME3592","name":"Metrology and Measurements","credits":3,"category":"PCC","official":true,"popular":true,"updated":"2026-09-09","units":[{"name":"Basics of Metrology","notes":"data/mechanical/ME3592_Unit1_Notes.html"},{"name":"Measurement of Linear, Angular Dimensions, Assembly and Transmission Elements","notes":"data/mechanical/ME3592_Unit2_Notes.html"},{"name":"Tolerance Analysis","notes":"data/mechanical/ME3592_Unit3_Notes.html"},{"name":"Metrology of Surfaces","notes":"data/mechanical/ME3592_Unit4_Notes.html"},{"name":"Advances in Metrology","notes":"data/mechanical/ME3592_Unit5_Notes.html"}],"pyqs":[],"videos":[],"questionBank":null,"importantQuestions":"data/mechanical/ME3592_Important_Questions.html","formulaSheet":"data/mechanical/ME3592_Formula_Sheet.html","solvedProblems":"data/mechanical/ME3592_Unit1_Solved_Problems.html","lastDayRevision":"data/mechanical/ME3592_Last_Day_Revision.html"},
-  {"code":"PE-I","name":"Professional Elective I","credits":3,"category":"PEC","official":true},
-  {"code":"PE-II","name":"Professional Elective II","credits":3,"category":"PEC","official":true},
-  {"code":"PE-III","name":"Professional Elective III","credits":3,"category":"PEC","official":true},
-  {"code":"MC-I","name":"Mandatory Course-I","credits":0,"category":"MC","official":true,"note":"Non-credit course; student selects one course from the MC-I list."},
-  {"code":"ME3511","name":"Summer Internship","credits":1,"category":"EEC","official":true,"note":"Two-week summer internship is done during IV semester summer vacation and evaluated in V semester."},
-  {"code":"ME3581","name":"Metrology and Dynamics Laboratory","credits":2,"category":"PCC","official":true}
+  {
+    "code": "ME3591",
+    "name": "Design of Machine Elements",
+    "credits": 4,
+    "category": "PCC",
+    "official": true,
+    "popular": true,
+    "updated": "2026-09-06",
+    "units": [
+      {
+        "name": "Fundamental Concepts in Design",
+        "notes": "data/mechanical/ME3591_Unit1_Notes.html"
+      },
+      {
+        "name": "Design of Shafts and Keys",
+        "notes": "data/mechanical/ME3591_Unit2_Notes.html"
+      },
+      {
+        "name": "Design of Temporary and Permanent Joints",
+        "notes": "data/mechanical/ME3591_Unit3_Notes.html"
+      },
+      {
+        "name": "Design of Energy Storing Elements and Engine Components",
+        "notes": "data/mechanical/ME3591_Unit4_Notes.html"
+      },
+      {
+        "name": "Design of Bearings and Miscellaneous Elements",
+        "notes": "data/mechanical/ME3591_Unit5_Notes.html"
+      }
+    ],
+    "pyqs": [
+      {
+        "year": 2024,
+        "session": "April/May",
+        "link": "data/mechanical/ACADRIX_ME3591_April_May_2024_PYQ.pdf"
+      },
+      {
+        "year": 2024,
+        "session": "November/December",
+        "link": "data/mechanical/ACADRIX_ME3591_NovDec_2024.pdf"
+      },
+      {
+        "year": 2023,
+        "session": "November/December",
+        "link": "data/mechanical/ACADRIX_ME3591_NovDec_2023.pdf"
+      }
+    ],
+    "pyqStatus": "Three ME3591 university question papers are available in the ACADRIX repository.",
+    "videos": [],
+    "questionBank": null,
+    "importantQuestions": "data/mechanical/ME3591_Important_Questions.html",
+    "formulaSheet": "data/mechanical/ME3591_Formula_Sheet.html",
+    "solvedProblems": "data/mechanical/ME3591_Solved_Problems.html",
+    "lastDayRevision": "data/mechanical/ME3591_Last_Day_Revision.html"
+  },
+  {
+    "code": "ME3592",
+    "name": "Metrology and Measurements",
+    "credits": 3,
+    "category": "PCC",
+    "official": true,
+    "popular": true,
+    "updated": "2026-09-09",
+    "units": [
+      {
+        "name": "Basics of Metrology",
+        "notes": "data/mechanical/ME3592_Unit1_Notes.html"
+      },
+      {
+        "name": "Measurement of Linear, Angular Dimensions, Assembly and Transmission Elements",
+        "notes": "data/mechanical/ME3592_Unit2_Notes.html"
+      },
+      {
+        "name": "Tolerance Analysis",
+        "notes": "data/mechanical/ME3592_Unit3_Notes.html"
+      },
+      {
+        "name": "Metrology of Surfaces",
+        "notes": "data/mechanical/ME3592_Unit4_Notes.html"
+      },
+      {
+        "name": "Advances in Metrology",
+        "notes": "data/mechanical/ME3592_Unit5_Notes.html"
+      }
+    ],
+    "pyqs": [
+      {
+        "year": 2024,
+        "session": "April/May",
+        "link": "data/mechanical/ME3592-Apr-May-2024.pdf"
+      },
+      {
+        "year": 2024,
+        "session": "November/December",
+        "link": "data/mechanical/ME3592-Nov-Dec-2024.pdf"
+      },
+      {
+        "year": 2023,
+        "session": "November/December",
+        "link": "data/mechanical/ME3592-Nov-Dec-2023.pdf"
+      }
+    ],
+    "videos": [],
+    "questionBank": null,
+    "importantQuestions": "data/mechanical/ME3592_Important_Questions.html",
+    "formulaSheet": "data/mechanical/ME3592_Formula_Sheet.html",
+    "solvedProblems": "data/mechanical/ME3592_Solved_Problems.html",
+    "lastDayRevision": "data/mechanical/ME3592_Last_Day_Revision.html",
+    "pyqStatus": "Three ME3592 university question papers are available in the ACADRIX repository."
+  },
+  {
+    "code": "PE-I",
+    "name": "Professional Elective I",
+    "credits": 3,
+    "category": "PEC",
+    "official": true
+  },
+  {
+    "code": "PE-II",
+    "name": "Professional Elective II",
+    "credits": 3,
+    "category": "PEC",
+    "official": true
+  },
+  {
+    "code": "PE-III",
+    "name": "Professional Elective III",
+    "credits": 3,
+    "category": "PEC",
+    "official": true
+  },
+  {
+    "code": "MC-I",
+    "name": "Mandatory Course-I",
+    "credits": 0,
+    "category": "MC",
+    "official": true,
+    "note": "Non-credit course; student selects one course from the MC-I list."
+  },
+  {
+    "code": "ME3511",
+    "name": "Summer Internship",
+    "credits": 1,
+    "category": "EEC",
+    "official": true,
+    "note": "Two-week summer internship is done during IV semester summer vacation and evaluated in V semester."
+  },
+  {
+    "code": "ME3581",
+    "name": "Metrology and Dynamics Laboratory",
+    "credits": 2,
+    "category": "PCC",
+    "official": true
+  }
 ]
