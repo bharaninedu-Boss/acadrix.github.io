@@ -216,11 +216,15 @@ async function renderHome(container) {
     const allSubjects = [];
     for (const dept of DEPARTMENTS) {
         for (let s = 1; s <= 8; s++) {
-            const arr = await loadSemesterData(dept.id, s);
-            if (arr && arr.length) {
-                arr.forEach(sub => {
-                    allSubjects.push({ ...sub, dept: dept.id, deptName: dept.name, sem: s });
-                });
+            const regulations = dept.id === 'mech' ? ['r2021', 'r2025'] : [null];
+            for (const regulation of regulations) {
+                const arr = regulation ? await loadSemesterData(dept.id, s, regulation) : await loadSemesterData(dept.id, s);
+                if (arr && arr.length) {
+                    arr.forEach(sub => {
+                        allSubjects.push({ ...sub, dept: dept.id, deptName: dept.name, sem: s, regulation: regulation || 'r2021' });
+                    });
+                }
+                if (window._ACADRIX_RENDER_GENERATION !== generation) return;
             }
         }
     }
@@ -234,11 +238,11 @@ async function renderHome(container) {
         popularGrid.innerHTML = `<div class="card"><p>No popular subjects yet.</p></div>`;
     } else {
         popularGrid.innerHTML = popular.map(p => `
-            <div class="card" role="button" onclick="navigateTo('details',{dept:'${p.dept}',sem:${p.sem},subjectCode:'${p.code}'})" tabindex="0">
+            <div class="card" role="button" onclick="navigateTo('details',{dept:'${p.dept}',sem:${p.sem},subjectCode:'${p.code}',regulation:'${p.regulation || 'r2021'}'})" tabindex="0">
                 <div>
                     <p style="color:var(--accent-color);font-weight:bold;margin:0">${p.code}</p>
                     <h3 style="margin:6px 0">${p.name}</h3>
-                    <p style="margin:0;color:var(--text-secondary)">${p.deptName} • Semester ${p.sem}</p>
+                    <p style="margin:0;color:var(--text-secondary)">${p.deptName} • ${p.regulation === 'r2025' ? 'R-2025' : 'R-2021'} • Semester ${p.sem}</p>
                 </div>
                 <div class="arrow">→</div>
             </div>
@@ -251,7 +255,7 @@ async function renderHome(container) {
         recentGrid.innerHTML = `<div class="card"><p>No recent updates.</p></div>`;
     } else {
         recentGrid.innerHTML = recent.map(r => `
-            <div class="card" role="button" onclick="navigateTo('details',{dept:'${r.dept}',sem:${r.sem},subjectCode:'${r.code}'})" tabindex="0">
+            <div class="card" role="button" onclick="navigateTo('details',{dept:'${r.dept}',sem:${r.sem},subjectCode:'${r.code}',regulation:'${r.regulation || 'r2021'}'})" tabindex="0">
                 <div>
                     <p style="color:var(--accent-color);font-weight:bold;margin:0">🆕 ${r.name}</p>
                     <h3 style="margin:6px 0">${r.code}</h3>
