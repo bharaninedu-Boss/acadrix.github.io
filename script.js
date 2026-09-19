@@ -459,18 +459,21 @@ async function renderSubjectDetails(container, code) {
 }
 
 function renderPyqs(pyqs) {
-    if (!pyqs) return '<p>Coming soon</p>';
+    if (!pyqs) return '<div class="resource-btn disabled">📄 Previous Year Questions — ⏳ Not added yet</div>';
     // pyqs can be object or array
     if (Array.isArray(pyqs)) {
+        if (pyqs.length === 0) return '<div class="resource-btn disabled">📄 Previous Year Questions — ⏳ Not added yet</div>';
         return pyqs.map(p => {
             const link = p.link && p.link !== '#' ? p.link : null;
-            if (link) return `<a href="${link}" class="resource-btn" target="_blank">${p.year} ${p.session ? p.session : ''} <span style="margin-left:auto">Open</span></a>`;
-            return `<div class="resource-btn disabled">${p.year} ${p.session ? p.session : ''} — ⏳ Coming Soon</div>`;
+            if (link) return `<a href="${link}" class="resource-btn" target="_blank" rel="noopener noreferrer">${p.year || 'PYQ'} ${p.session ? p.session : ''} <span style="margin-left:auto">Open</span></a>`;
+            return `<div class="resource-btn disabled">${p.year || 'PYQ'} ${p.session ? p.session : ''} — ⏳ Coming Soon</div>`;
         }).join('');
     }
     // object map
-    return Object.entries(pyqs).map(([year, url]) => (
-        url && url !== '#' ? `<a href="${url}" class="resource-btn" target="_blank">${year} Paper</a>` : `<div class="resource-btn disabled">${year} — ⏳ Coming Soon</div>`
+    const entries = Object.entries(pyqs);
+    if (entries.length === 0) return '<div class="resource-btn disabled">📄 Previous Year Questions — ⏳ Not added yet</div>';
+    return entries.map(([year, url]) => (
+        url && url !== '#' ? `<a href="${url}" class="resource-btn" target="_blank" rel="noopener noreferrer">${year} Paper</a>` : `<div class="resource-btn disabled">${year} — ⏳ Coming Soon</div>`
     )).join('');
 }
 
