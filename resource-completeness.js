@@ -41,6 +41,14 @@
     try{ const res=await fetch(path,{cache:'no-store'}); if(!res.ok)return null; const data=await res.json(); const list=Array.isArray(data)?data:(Array.isArray(data.subjects)?data.subjects:[]); return list.find(s=>String(s.code||'').toUpperCase()===r.code)||null; }catch(_){return null;}
   }
   function esc(v){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+  function resourceHref(value, route){
+    if(typeof value!=='string'||!value.trim()) return '';
+    const path=value.trim();
+    if(/^(https?:|#|\/)/i.test(path)||path.startsWith('data/')) return path;
+    if(route.dept==='mech'&&route.regulation==='r2025') return `data/mechanical/r2025/${path.replace(/^\.\//,'')}`;
+    if(route.dept==='mech'&&route.regulation==='r2021') return `data/mechanical/${path.replace(/^\.\//,'')}`;
+    return path;
+  }
   function render(subject,route){
     const app=document.getElementById('app'); if(!app||!subject)return;
     const old=document.getElementById('acadrx-resource-completeness'); if(old)old.remove();
@@ -48,7 +56,7 @@
     const available=states.filter(x=>x.ok).length,total=states.length;
     const panel=document.createElement('section'); panel.id='acadrx-resource-completeness'; panel.className='resource-completeness card';
     const regulation=route.regulation==='r2025'?'R-2025':'R-2021';
-    panel.innerHTML=`<div class="resource-completeness-head"><div><span class="resource-completeness-kicker">RESOURCE COVERAGE</span><h2 id="resource-completeness-title">Study Resources</h2><p>Coverage check for ${esc(subject.code)} · ${regulation}. Missing items are shown as not added yet — no placeholder links are created.</p></div><div class="resource-completeness-score"><strong>${available}/${total}</strong><span>available</span></div></div><div class="resource-completeness-grid">${states.map(item=>{const href=item.key==='units'?'':(typeof subject[item.key]==='string'?subject[item.key].trim():'');const action=item.key==='units'?(item.ok?'Open unit notes from the tabs above':'No unit note links in data'):(href?`<a href="${esc(href)}">Open resource →</a>`:'');return `<article class="resource-check-item ${item.ok?'is-available':'is-missing'}"><div class="resource-check-icon">${item.icon}</div><div class="resource-check-main"><strong>${item.label}</strong><span>${item.ok?'Available':'Not added yet'}</span>${action?`<small>${action}</small>`:''}</div><b class="resource-check-mark">${item.ok?'✓':'—'}</b></article>`;}).join('')}</div>`;
+    panel.innerHTML=`<div class="resource-completeness-head"><div><span class="resource-completeness-kicker">RESOURCE COVERAGE</span><h2 id="resource-completeness-title">Study Resources</h2><p>Coverage check for ${esc(subject.code)} · ${regulation}. Missing items are shown as not added yet — no placeholder links are created.</p></div><div class="resource-completeness-score"><strong>${available}/${total}</strong><span>available</span></div></div><div class="resource-completeness-grid">${states.map(item=>{const href=item.key==='units'?'':resourceHref(subject[item.key],route);const action=item.key==='units'?(item.ok?'Open unit notes from the tabs above':'No unit note links in data'):(href?`<a href="${esc(href)}">Open resource →</a>`:'');return `<article class="resource-check-item ${item.ok?'is-available':'is-missing'}"><div class="resource-check-icon">${item.icon}</div><div class="resource-check-main"><strong>${item.label}</strong><span>${item.ok?'Available':'Not added yet'}</span>${action?`<small>${action}</small>`:''}</div><b class="resource-check-mark">${item.ok?'✓':'—'}</b></article>`;}).join('')}</div>`;
     const roadmap=document.createElement('section'); roadmap.className='resource-roadmap card'; roadmap.setAttribute('aria-labelledby','resource-roadmap-title');
     roadmap.innerHTML=`<div class="resource-roadmap-head"><div><span class="resource-completeness-kicker">STUDY ROADMAP</span><h2 id="resource-roadmap-title">Recommended Study Order</h2><p>Follow the sequence below. A step is marked available only when that resource is actually present in the subject data.</p></div></div><div class="resource-roadmap-grid">${ROADMAP.map(step=>{const ok=states.find(s=>s.key===step.key)?.ok; return `<article class="resource-roadmap-step ${ok?'is-ready':'is-missing'}"><span class="resource-roadmap-number">${step.icon}</span><div><strong>${step.label}</strong><small>${step.text}</small><b>${ok?'Available':'Not added yet'}</b></div></article>`;}).join('')}</div>`;
     const header=app.querySelector('.subject-header'),tabs=app.querySelector('.subject-tabs'),anchor=tabs||header;
