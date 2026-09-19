@@ -59,7 +59,7 @@
     path.innerHTML = '<span>1. Learn</span><b>→</b><span>2. Practice</span><b>→</b><span>3. Verify</span><b>→</b><span>4. Revise</span>';
     nav.after(path);
 
-    const observer = new IntersectionObserver(entries => {
+    sectionObserver = new IntersectionObserver(entries => {
       const visible = entries.filter(e => e.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
       if (!visible) return;
       const labels = { 'acadrx-units': '📚 Units', 'acadrx-pyqs': '📝 PYQs', 'acadrx-exam': '🎯 Exam Prep', 'acadrx-videos': '🎥 Videos' };
@@ -68,12 +68,21 @@
 
     targets.forEach(([, id]) => {
       const el = document.getElementById(id);
-      if (el) observer.observe(el);
+      if (el) sectionObserver.observe(el);
     });
   }
 
   const app = document.getElementById('app') || document.body;
   let lastHeaderText = '';
+  let sectionObserver = null;
+  const originalEnhanceSubjectPage = enhanceSubjectPage;
+  enhanceSubjectPage = function () {
+    if (sectionObserver) {
+      sectionObserver.disconnect();
+      sectionObserver = null;
+    }
+    originalEnhanceSubjectPage();
+  };
   const observer = new MutationObserver(() => {
     const header = document.querySelector('.subject-header');
     const text = header ? header.textContent || '' : '';
