@@ -29,24 +29,8 @@
         "notes": "data/mechanical/ME3591_Unit5_Notes.html"
       }
     ],
-    "pyqs": [
-      {
-        "year": 2024,
-        "session": "April/May",
-        "link": "data/mechanical/ACADRIX_ME3591_April_May_2024_PYQ.pdf"
-      },
-      {
-        "year": 2024,
-        "session": "November/December",
-        "link": "data/mechanical/ACADRIX_ME3591_NovDec_2024.pdf"
-      },
-      {
-        "year": 2023,
-        "session": "November/December",
-        "link": "data/mechanical/ACADRIX_ME3591_NovDec_2023.pdf"
-      }
-    ],
-    "pyqStatus": "Three ME3591 university question papers are available in the ACADRIX repository.",
+    "pyqs": [],
+    "pyqStatus": "No ME3591 question-paper PDFs are currently published in the repository. Broken placeholder links were removed until the actual PDFs are uploaded.",
     "videos": [],
     "questionBank": null,
     "importantQuestions": "data/mechanical/ME3591_Important_Questions.html",
@@ -84,30 +68,14 @@
         "notes": "data/mechanical/ME3592_Unit5_Notes.html"
       }
     ],
-    "pyqs": [
-      {
-        "year": 2024,
-        "session": "April/May",
-        "link": "data/mechanical/ME3592-Apr-May-2024.pdf"
-      },
-      {
-        "year": 2024,
-        "session": "November/December",
-        "link": "data/mechanical/ME3592-Nov-Dec-2024.pdf"
-      },
-      {
-        "year": 2023,
-        "session": "November/December",
-        "link": "data/mechanical/ME3592-Nov-Dec-2023.pdf"
-      }
-    ],
+    "pyqs": [],
     "videos": [],
     "questionBank": null,
     "importantQuestions": "data/mechanical/ME3592_Important_Questions.html",
     "formulaSheet": "data/mechanical/ME3592_Formula_Sheet.html",
     "solvedProblems": "data/mechanical/ME3592_Solved_Problems.html",
     "lastDayRevision": "data/mechanical/ME3592_Last_Day_Revision.html",
-    "pyqStatus": "Three ME3592 university question papers are available in the ACADRIX repository."
+    "pyqStatus": "Three ME3592 papers were supplied for study, but their PDFs are not currently published in the repository. Broken links are not exposed on ACADRIX."
   },
   {
     "code": "PE-I",
