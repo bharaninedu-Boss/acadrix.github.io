@@ -438,7 +438,7 @@ async function renderSubjectDetails(container, code) {
         <div class="grid">
             <div class="resource-section">
                 <h3>📝 PREVIOUS YEAR QUESTIONS</h3>
-                ${renderPyqs(subject.pyqs)}
+                ${renderPyqs(subject.pyqs, subject.pyqStatus)}
             </div>
 
             <div class="resource-section">
@@ -462,11 +462,11 @@ async function renderSubjectDetails(container, code) {
     `;
 }
 
-function renderPyqs(pyqs) {
-    if (!pyqs) return '<div class="resource-btn disabled">📄 Previous Year Questions — ⏳ Not added yet</div>';
+function renderPyqs(pyqs, status='') {
+    if (!pyqs) return `<div class="resource-btn disabled">📄 Previous Year Questions — ⏳ Not added yet${status ? `<small style="display:block;margin-top:4px">${status}</small>` : ''}</div>`;
     // pyqs can be object or array
     if (Array.isArray(pyqs)) {
-        if (pyqs.length === 0) return '<div class="resource-btn disabled">📄 Previous Year Questions — ⏳ Not added yet</div>';
+        if (pyqs.length === 0) return `<div class="resource-btn disabled">📄 Previous Year Questions — ⏳ Not added yet${status ? `<small style="display:block;margin-top:4px">${status}</small>` : ''}</div>`;
         return pyqs.map(p => {
             const link = p.link && p.link !== '#' ? p.link : null;
             if (link) return `<a href="${link}" class="resource-btn" target="_blank" rel="noopener noreferrer">${p.year || 'PYQ'} ${p.session ? p.session : ''} <span style="margin-left:auto">Open</span></a>`;
@@ -475,7 +475,7 @@ function renderPyqs(pyqs) {
     }
     // object map
     const entries = Object.entries(pyqs);
-    if (entries.length === 0) return '<div class="resource-btn disabled">📄 Previous Year Questions — ⏳ Not added yet</div>';
+    if (entries.length === 0) return `<div class="resource-btn disabled">📄 Previous Year Questions — ⏳ Not added yet${status ? `<small style="display:block;margin-top:4px">${status}</small>` : ''}</div>`;
     return entries.map(([year, url]) => (
         url && url !== '#' ? `<a href="${url}" class="resource-btn" target="_blank" rel="noopener noreferrer">${year} Paper</a>` : `<div class="resource-btn disabled">${year} — ⏳ Coming Soon</div>`
     )).join('');
