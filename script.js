@@ -25,6 +25,9 @@ let currentState = {
     subjectCode: null
 };
 
+// Async-render guard: prevents a slow previous route from overwriting a newer route.
+let renderGeneration = 0;
+
 // Initialize App
 document.addEventListener('DOMContentLoaded', () => {
     initTheme();
@@ -128,6 +131,8 @@ function navigateTo(view, params = {}, fromHash = false) {
 
 function render() {
     const app = document.getElementById('app');
+    const generation = ++renderGeneration;
+    window._ACADRIX_RENDER_GENERATION = generation;
     app.innerHTML = ''; // Clear current content
 
     switch (currentState.view) {
@@ -154,6 +159,7 @@ function render() {
 
 // VIEW: Home (with Browse by Department, Popular Subjects, Recently Added)
 async function renderHome(container) {
+    const generation = window._ACADRIX_RENDER_GENERATION;
     container.innerHTML = `
         <section class="hero">
             <h1>Anna University Engineering Notes</h1>
@@ -218,6 +224,9 @@ async function renderHome(container) {
             }
         }
     }
+
+    // Abort stale async work before it can update the current route.
+    if (generation !== window._ACADRIX_RENDER_GENERATION || currentState.view !== 'home' && currentState.view !== 'browse') return;
 
     // Popular
     const popular = allSubjects.filter(s => s.popular).slice(0, 8);
@@ -313,6 +322,7 @@ async function loadSemesterData(deptId, sem) {
 
 // VIEW: Subjects List
 async function renderSubjects(container, deptId, sem) {
+    const generation = window._ACADRIX_RENDER_GENERATION;
     const dept = DEPARTMENTS.find(d => d.id === deptId) || { name: deptId };
     container.innerHTML = `
         <div class="breadcrumb">
@@ -327,6 +337,7 @@ async function renderSubjects(container, deptId, sem) {
     `;
 
     const subjects = await loadSemesterData(deptId, sem);
+    if (generation !== window._ACADRIX_RENDER_GENERATION || currentState.view !== 'subjects' || currentState.dept !== deptId || Number(currentState.sem) !== Number(sem)) return;
     const grid = document.getElementById('subjectsGrid');
     if (!subjects || subjects.length === 0) {
         grid.innerHTML = `<p>Content coming soon for this semester.</p>`;
@@ -347,6 +358,7 @@ async function renderSubjects(container, deptId, sem) {
 
 // VIEW: Subject Details
 async function renderSubjectDetails(container, code) {
+    const generation = window._ACADRIX_RENDER_GENERATION;
     // Find subject across loadedData
     let subject = null;
     let foundDept = null;
@@ -361,12 +373,15 @@ async function renderSubjectDetails(container, code) {
         for (const dept of DEPARTMENTS) {
             for (let i = 1; i <= 8; i++) {
                 const arr = await loadSemesterData(dept.id, i);
+                if (generation !== window._ACADRIX_RENDER_GENERATION || currentState.view !== 'details' || currentState.subjectCode !== code) return;
                 const found = arr.find(s => (s.code === code) || (s.code && s.code.toLowerCase() === code.toLowerCase()));
                 if (found) { subject = found; foundDept = dept.id; foundSem = i; break; }
             }
             if (subject) break;
         }
     }
+
+    if (generation !== window._ACADRIX_RENDER_GENERATION || currentState.view !== 'details' || currentState.subjectCode !== code) return;
 
     if (!subject) {
         container.innerHTML = `<div class="breadcrumb"><span onclick="navigateTo('home')">Home</span> › <span>Subject</span></div><div class="card"><p>Subject not found.</p></div>`;
