@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CME372 Nov/Dec 2025 Solved Answers | ACADRIX</title>
+<meta name="description" content="Solved answers and worked solutions for CME372 CAD and CAE November/December 2025 Question Paper Code 80977, R-2021.">
+<style>
+body{font-family:Arial,sans-serif;max-width:980px;margin:auto;padding:22px;line-height:1.7;color:#172033;background:#f8fafc}
+.card{background:#fff;border:1px solid #dbe3ef;border-radius:14px;padding:20px;margin:18px 0}.hero{text-align:center}
+.q{margin:18px 0}.ans{background:#f8fafc;border-left:4px solid #2563eb;padding:14px;margin-top:8px}
+.formula{font-family:Georgia,serif;background:#eff6ff;padding:12px;border-radius:8px;margin:10px 0}
+.warn{background:#fff7ed;border-left:4px solid #f59e0b;padding:14px}.muted{color:#64748b}a{color:#2563eb;font-weight:700;text-decoration:none}
+table{width:100%;border-collapse:collapse;margin:10px 0}th,td{border:1px solid #cbd5e1;padding:8px;text-align:left;vertical-align:top}th{background:#eff6ff}
+</style></head><body>
+<p><a href="CME372_NovDec_2025_Question_Paper.html">← Question Paper</a> &nbsp; | &nbsp; <a href="CME372.html">CME372 Hub</a></p>
+<section class="card hero"><h1>CME372 — CAD and CAE</h1><h2>November/December 2025 — Solved Answers</h2><p><strong>Question Paper Code 80977 • R-2021</strong></p><p class="muted">Prepared as ACADRIX study material from the four-page paper scan supplied to ACADRIX. These are worked study answers, not an official Anna University answer key.</p></section>
+
+<section class="card"><h2>PART A — 2-Mark Answers</h2>
+<div class="q"><strong>1. Primary coordinate system</strong><div class="ans">The <strong>Cartesian coordinate system</strong> is the primary coordinate system, normally represented by X, Y and Z axes in 3D computer graphics.</div></div>
+<div class="q"><strong>2. Clipping vs viewing</strong><div class="ans"><strong>Viewing</strong> defines how a scene is transformed and projected into the viewing/display space. <strong>Clipping</strong> removes portions of objects lying outside the selected viewing region.</div></div>
+<div class="q"><strong>3. Analytical, interpolated and approximated curves</strong><div class="ans">Analytical curves are defined by exact mathematical equations. Interpolated curves pass through specified data/control points. Approximated curves are controlled by points but generally do not pass through every control point.</div></div>
+<div class="q"><strong>4. B-spline characteristics</strong><div class="ans">Local control, piecewise polynomial definition, continuity controlled by degree/knot vector, generally does not pass through all control points, and stable geometric manipulation.</div></div>
+<div class="q"><strong>5. Ray tracing</strong><div class="ans">A ray is traced from the viewing point through each image pixel into the scene. Ray-object intersections are found; the nearest visible surface is selected and secondary rays can be used for reflection, refraction and shadows.</div></div>
+<div class="q"><strong>6. Warnock's Algorithm</strong><div class="ans">It recursively subdivides the viewing area into smaller regions until the visibility of the polygons in a region can be resolved directly or the region reaches a simple case/pixel level.</div></div>
+<div class="q"><strong>7. FEM stiffness matrix</strong><div class="ans">The element stiffness matrix relates nodal displacements to nodal forces: <strong>{F}<sub>e</sub> = [k]<sub>e</sub>{u}<sub>e</sub></strong>. It represents the resistance of an element to deformation.</div></div>
+<div class="q"><strong>8. Shape-function properties</strong><div class="ans">They should provide the required interpolation, satisfy nodal interpolation (Kronecker-delta property for standard nodal elements), maintain compatibility/continuity as required, and reproduce the field adequately within the element.</div></div>
+<div class="q"><strong>9. Ritz Method in FEA</strong><div class="ans">An admissible approximate displacement/field function is assumed with unknown coefficients. The governing functional is made stationary, usually by setting its derivatives with respect to the unknown coefficients to zero, producing algebraic equations.</div></div>
+<div class="q"><strong>10. Good mesh quality</strong><div class="ans">Poorly shaped or distorted elements can reduce accuracy and cause convergence problems. A suitable mesh improves numerical reliability and captures important gradients without unnecessary computational cost.</div></div>
+</section>
+
+<section class="card"><h2>PART B — 13-Mark Answers</h2>
+<div class="q"><strong>11(a). Sutherland–Hodgman Polygon Clipping</strong><div class="ans">
+<p>The Sutherland–Hodgman method clips a polygon against each boundary of a convex clipping window successively.</p>
+<ol><li>Take the polygon vertices in order.</li><li>Process them against the first clipping boundary.</li><li>For each consecutive pair, classify the start and end vertices as inside/outside.</li><li>Apply the four cases: inside→inside: output end point; inside→outside: output intersection; outside→inside: output intersection and end point; outside→outside: output nothing.</li><li>Use the resulting polygon as input for the next boundary.</li><li>After all boundaries, the remaining vertices form the clipped polygon.</li></ol>
+<p><strong>Advantages:</strong> systematic, simple, efficient for convex clipping windows, and suitable for polygon graphics pipelines.</p>
+<p><strong>Limitations:</strong> basic form is intended for convex clipping regions; concave/general cases require additional handling and generated vertex ordering must be managed carefully.</p></div></div>
+<div class="q"><strong>11(b). Rotation of triangle</strong><div class="ans">
+<p>For counter-clockwise rotation: x′=x cosθ−y sinθ, y′=x sinθ+y cosθ. Clockwise 45° is θ=−45°.</p>
+<table><tr><th>Point</th><th>45° clockwise</th><th>60° anti-clockwise</th></tr>
+<tr><td>A(5,2)</td><td>(4.950, −2.121)</td><td>(0.768, 5.330)</td></tr>
+<tr><td>B(3,5)</td><td>(5.657, 1.414)</td><td>(−2.830, 5.098)</td></tr>
+<tr><td>C(7,5)</td><td>(8.485, −1.414)</td><td>(−0.830, 8.562)</td></tr></table>
+</div></div>
+
+<div class="q"><strong>12(a). Hermite cubic spline at the midpoint</strong><div class="ans">
+<p>Use the cubic Hermite form:</p>
+<div class="formula">P(t)=h₁P₀+h₂P₁+h₃T₀+h₄T₁</div>
+<p>At t=0.5: h₁=h₂=0.5, h₃=0.125 and h₄=−0.125.</p>
+<p>With P₀=(6,5), P₁=(1,1), T₀=(4,4), T₁=(6,1):</p>
+<div class="formula">P(0.5) = (3.25, 3.375)</div>
+<p>Using the derivatives of the Hermite basis functions at t=0.5 gives:</p>
+<div class="formula">dP/dt = (−10, −7.25)</div>
+<p class="muted">The tangent-vector result is with respect to the Hermite parameter t, as requested by the given curve definition.</p></div></div>
+
+<div class="q"><strong>12(b). CSG tree</strong><div class="ans">A CSG tree represents a solid using primitive solids such as blocks/cylinders and Boolean operations <strong>union (∪), intersection (∩), and difference (−)</strong>. For the exact two trees, reproduce the primitive labels and Boolean relationships from Fig. 12(b) in the supplied paper; the scan's geometry is the controlling source for this figure-based answer.</div></div>
+
+<div class="q"><strong>13(a). CAD data-exchange formats</strong><div class="ans">
+<p>A suitable standards-based exchange workflow is:</p>
+<table><tr><th>Destination</th><th>Suitable standard</th><th>Purpose</th></tr>
+<tr><td>CAE / ABAQUS FEA</td><td>STEP where supported; otherwise a solver-compatible neutral/mesh exchange route</td><td>Transfer product geometry/model data into analysis software.</td></tr>
+<tr><td>Rapid prototyping</td><td>STL (commonly used)</td><td>Transfer triangulated surface geometry to additive manufacturing/prototyping systems.</td></tr>
+<tr><td>Manufacturing / process planning</td><td>STEP / IGES depending on required data and software support</td><td>Exchange product geometry and associated CAD information between systems.</td></tr>
+</table>
+<p>Different software packages use different native formats. Neutral standards reduce dependence on a single vendor and help prevent repeated modelling. Data translation can still introduce tolerance, topology, feature or attribute loss, so the exchanged model should be checked after import.</p></div></div>
+
+<div class="q"><strong>13(b). Hidden-surface removal</strong><div class="ans">
+<p>Hidden-surface removal determines which surfaces are visible from the chosen viewpoint and prevents surfaces behind nearer surfaces from being displayed.</p>
+<p><strong>Depth-buffer method:</strong> maintain a depth value for each pixel; when a new fragment is closer than the stored depth, replace the stored depth and colour.</p>
+<p><strong>Warnock method:</strong> recursively subdivide a viewing area when the visibility of overlapping polygons cannot be resolved at the current region size. Continue until a simple visibility case is obtained.</p>
+<p>Other methods include scan-line, priority/depth sorting and ray tracing.</p></div></div>
+
+<div class="q"><strong>14(a). Step-by-step FEM procedure</strong><div class="ans">
+<ol><li>Define the physical problem and assumptions.</li><li>Idealise the geometry and loading.</li><li>Discretise the domain into finite elements.</li><li>Select element type and interpolation/shape functions.</li><li>Specify material properties.</li><li>Apply loads and boundary conditions.</li><li>Form each element equation/stiffness matrix.</li><li>Assemble the global stiffness matrix.</li><li>Apply essential boundary conditions.</li><li>Solve for unknown nodal displacements/temperatures.</li><li>Calculate strains, stresses, reactions or other derived quantities.</li><li>Check mesh sensitivity and physical reasonableness.</li></ol>
+<p>The supplied paper's truss problem in Q14(b) is a direct example of this sequence.</p></div></div>
+
+<div class="q"><strong>14(b). Two-bar truss — worked solution</strong><div class="ans">
+<p>From Fig. 14(b): E=200 GPa=200,000 N/mm²; top bar A₁=1000 mm², L₁=760 mm; diagonal A₂=1250 mm², with Δx=760 mm and Δy=500 mm.</p>
+<div class="formula">L₂=√(760²+500²)=909.725 mm; c=760/L₂=0.835417; s=500/L₂=0.549617</div>
+<p>Local axial stiffnesses:</p>
+<div class="formula">k₁=EA₁/L₁=263157.895 N/mm<br>k₂=EA₂/L₂=274808.250 N/mm</div>
+<p>For the loaded right node, the assembled 2×2 stiffness matrix is:</p>
+<div class="formula">K = [[454952.537, 126180.685],[126180.685,83013.609]] N/mm</div>
+<p>With {F}={5000,0} N:</p>
+<div class="formula">uₓ≈0.01900 mm, &nbsp; uᵧ≈−0.02888 mm</div>
+<p>The diagonal extension is c·uₓ+s·uᵧ≈0, so its axial force is approximately zero. The horizontal top member carries approximately 5 kN tension.</p>
+<p><strong>Reactions:</strong> upper-left support ≈5 kN horizontal opposite the applied load; lower-left support ≈0. The vertical reaction is approximately zero for this idealised geometry/load case.</p>
+</div></div>
+
+<div class="q"><strong>15(a). Free vs mapped meshing</strong><div class="ans">
+<table><tr><th>Free meshing</th><th>Mapped meshing</th></tr><tr><td>Flexible for complex geometry.</td><td>Produces a structured, controlled element pattern where geometry permits.</td></tr><tr><td>Less geometric preparation is often required.</td><td>Requires suitable topology/geometry for mapping.</td></tr><tr><td>Useful for irregular and complicated regions.</td><td>Useful for regular/simple regions where element alignment matters.</td></tr><tr><td>Element orientation/control may be less uniform.</td><td>Better control of orientation and distribution.</td></tr></table>
+<p>The choice depends on geometry, required accuracy, element type and desired mesh control.</p></div></div>
+
+<div class="q"><strong>15(b). Geometric nonlinearity</strong><div class="ans">Geometric nonlinearity occurs when deformation changes the geometry sufficiently that the equilibrium equations and stiffness depend on the current configuration. Important factors include large displacement, large rotation, changing load direction/configuration, stress-stiffening effects and instability/buckling-type behaviour. An incremental-iterative nonlinear solution is commonly required.</div></div>
+</section>
+
+<section class="card"><h2>PART C — 15-Mark Answers</h2>
+<div class="q"><strong>16(a). Rayleigh–Ritz deflection</strong><div class="ans">
+<p>For a cantilever of length L and flexural rigidity EI, choose an admissible trial function satisfying the fixed-end conditions:</p>
+<div class="formula">v(x)=a x²(3L−x)</div>
+<p>For a uniformly distributed load w over the full span and a point load P at x=L/2, the Ritz functional is U−W. The required integrals are:</p>
+<div class="formula">∫₀ᴸ(φ″)²dx=12L³, &nbsp; ∫₀ᴸφdx=3L⁴/4, &nbsp; φ(L/2)=5L³/8</div>
+<p>Hence:</p>
+<div class="formula">a = wL/(16EI) + 5P/(96EI)</div>
+<p>Deflection at the centre:</p>
+<div class="formula">v<sub>Ritz</sub>(L/2)=5wL⁴/(128EI)+25PL³/(768EI)</div>
+<p>For comparison, the exact centre deflection is obtained by superposition:</p>
+<div class="formula">v<sub>exact</sub>(L/2)=5wL⁴/(384EI)+PL³/(24EI)</div>
+<p>The difference arises because the selected single trial function cannot reproduce the exact piecewise curvature field produced by the centre point load.</p></div></div>
+
+<div class="q"><strong>16(b). Penalty approach for the three-material axial bar</strong><div class="ans">
+<p>From Fig. 16(b): L₁=200 m, L₂=300 m, L₃=200 m; A₁=600 mm², A₂=2400 mm², A₃=700 mm²; E₁=70×10⁹ N/m², E₂=200×10⁹ N/m², E₃=70×10⁹ N/m²; P=200×10³ N at node 2. The end nodes are fixed.</p>
+<p>Using SI units (areas converted to m²), element stiffnesses are:</p>
+<div class="formula">k₁=EA/L=2.10×10⁸ N/m<br>k₂=1.60×10⁹ N/m<br>k₃=2.45×10⁸ N/m</div>
+<p>The assembled global stiffness matrix is:</p>
+<div class="formula">K = [[2.10e8,−2.10e8,0,0],<br>[−2.10e8,1.81e9,−1.60e9,0],<br>[0,−1.60e9,1.845e9,−2.45e8],<br>[0,0,−2.45e8,2.45e8]] N/m</div>
+<p>For the exact fixed-end solution (the limiting result of the penalty method as the penalty parameter becomes very large):</p>
+<div class="formula">u₁=0, u₂≈4.7341×10⁻⁴ m, u₃≈4.1055×10⁻⁴ m, u₄=0</div>
+<table><tr><th>Material</th><th>Strain</th><th>Stress</th></tr>
+<tr><td>1</td><td>+0.002367</td><td>+165.69 MPa</td></tr>
+<tr><td>2</td><td>−0.00020955</td><td>−41.91 MPa</td></tr>
+<tr><td>3</td><td>−0.00205273</td><td>−143.69 MPa</td></tr></table>
+<p>Support reactions are approximately 99.42 kN at the left support and 100.58 kN at the right support, opposite to the applied 200 kN load, satisfying overall equilibrium.</p>
+<div class="warn"><strong>Penalty-method note:</strong> The paper does not specify a numerical penalty coefficient α. Therefore a unique finite-α numerical answer cannot be stated from the paper alone. In the penalty formulation, fixed-end conditions are imposed by adding large α terms to the corresponding diagonal entries of K; as α→∞, the solution approaches the fixed-end values above.</div>
+</div></div>
+</section>
+
+<section class="card"><h2>Quick Exam Revision</h2>
+<ul><li>Unit I: transformations, clipping, viewing, line/circle algorithms.</li><li>Unit II: Hermite, Bezier, B-spline, surfaces, CSG.</li><li>Unit III: hidden-surface removal, ray tracing, Warnock, GKS/OpenGL, IGES/STEP/CALS.</li><li>Unit IV: weighted residual, Ritz, FEM procedure, stiffness matrices, shape functions, bar/beam/thermal FEM.</li><li>Unit V: nonlinear analysis, plasticity/viscoplasticity, contact, geometric nonlinearity, free/mapped meshing, mesh quality and error estimation.</li></ul>
+<p class="muted">Figure-dependent answers should be checked against the original four-page paper scan, especially Q12(b), Q14(b) and Q16(b).</p></section>
+</body></html>
