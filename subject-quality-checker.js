@@ -47,11 +47,20 @@
     const score=Math.round((present/REQUIRED.length)*100);
     return {score,present,textLength:text.length,headings:headings.length,links,formulas,diagrams,checks};
   }
-  async function check(subject) {
+  function noteHref(value,route){
+    if(typeof value!=='string'||!value.trim()) return '';
+    const path=value.trim();
+    if(/^(https?:|#|\/)/i.test(path)||path.startsWith('data/')) return path;
+    if(route.dept==='mech'&&route.regulation==='r2025') return `data/mechanical/r2025/${path.replace(/^\.\//,'')}`;
+    if(route.dept==='mech'&&route.regulation==='r2021') return `data/mechanical/${path.replace(/^\.\//,'')}`;
+    const root=ROOTS[route.dept];
+    return root ? `${root}/${path.replace(/^\.\//,'')}` : path;
+  }
+  async function check(subject,route) {
     const units=Array.isArray(subject.units)?subject.units:[];
     const results=[];
     for(let i=0;i<units.length;i++){
-      const u=units[i]||{}; const href=typeof u.notes==='string'?u.notes.trim():'';
+      const u=units[i]||{}; const href=noteHref(u.notes,route);
       if(!href){results.push({unit:i+1,title:u.title||`Unit ${i+1}`,status:'missing',score:0});continue;}
       try { const x=await fetch(href,{cache:'no-store'}); if(!x.ok){results.push({unit:i+1,title:u.title||`Unit ${i+1}`,status:'broken',score:0});continue;} const html=await x.text(); const s=textScore(html); results.push({unit:i+1,title:u.title||`Unit ${i+1}`,status:s.score>=80?'strong':s.score>=60?'developing':'thin',...s}); } catch(e){results.push({unit:i+1,title:u.title||`Unit ${i+1}`,status:'broken',score:0});}
     }
@@ -68,6 +77,6 @@
   }
   function label(s){return {strong:'Strong structure',developing:'Could be expanded',thin:'Needs more content',missing:'No note link',broken:'Note could not be loaded'}[s]||s;}
   function esc(v){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
-  async function refresh(){const r=routeInfo(); if(!r){document.getElementById('acadrx-quality-check')?.remove();return;} const key=`${r.dept}/${r.regulation}/${r.sem}/${r.code}`; if(key===lastKey&&document.getElementById('acadrx-quality-check'))return; lastKey=key; const s=await load(r); if(s&&routeInfo()&&JSON.stringify(routeInfo())===JSON.stringify(r))render(s,r,await check(s));}
+  async function refresh(){const r=routeInfo(); if(!r){document.getElementById('acadrx-quality-check')?.remove();return;} const key=`${r.dept}/${r.regulation}/${r.sem}/${r.code}`; if(key===lastKey&&document.getElementById('acadrx-quality-check'))return; lastKey=key; const s=await load(r); if(s&&routeInfo()&&JSON.stringify(routeInfo())===JSON.stringify(r))render(s,r,await check(s,r));}
   function schedule(){clearTimeout(timer);timer=setTimeout(refresh,120);} window.addEventListener('hashchange',()=>{lastKey='';schedule();}); const app=document.getElementById('app'); if(app)new MutationObserver(schedule).observe(app,{childList:true,subtree:true}); schedule();
 })();
