@@ -5,6 +5,7 @@
   'use strict';
   let cachedIndex = null;
   let buildingIndex = null;
+  let searchRequestId = 0;
 
   const DEPTS = [
     { id:'mech', name:'Mechanical Engineering', folder:'mechanical' },
@@ -73,9 +74,11 @@
     const input=document.getElementById('searchInput'), results=document.getElementById('searchResults');
     if (!input || !results) return;
     const q=input.value.trim().toLowerCase();
+    const requestId = ++searchRequestId;
     if(q.length<2){results.style.display='none';return;}
     results.innerHTML='<div class="search-item"><small>Searching ACADRIX…</small></div>'; results.style.display='block';
     const index=await buildIndex();
+    if (requestId !== searchRequestId || input.value.trim().toLowerCase() !== q) return;
     const ranked=index.map(item=>({item,score:score(item,q)})).filter(x=>x.score>0).sort((a,b)=>b.score-a.score);
     const seen=new Set(), unique=[];
     ranked.forEach(x=>{const k=`${x.item.regulation}|${x.item.dept}|${x.item.sem}|${x.item.code}`;if(!seen.has(k)&&unique.length<12){seen.add(k);unique.push(x.item);}});
