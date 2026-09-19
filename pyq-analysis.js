@@ -95,7 +95,6 @@
       anchor.parentNode.insertBefore(section, anchor);
       return;
     }
-    if (!anchor) return;
 
     const section = document.createElement('section');
     section.id = 'acadrx-pyq-analysis';
