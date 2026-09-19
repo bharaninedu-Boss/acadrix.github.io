@@ -16,7 +16,6 @@
       title: 'ME3592 Exam Intelligence',
       published: false,
       note: 'Exam intelligence is temporarily hidden because the three ME3592 paper PDFs supplied during development are not currently published in the ACADRIX repository.',
-      note: 'Based on the supplied Apr/May 2024, Nov/Dec 2024 and Nov/Dec 2023 university papers. Recurrence is used for revision priority only; it is not a prediction of the next paper.',
       papers: 3,
       patterns: [
         ['Linear/angular measuring instruments', '3/3 papers', 'Very High', 2],
