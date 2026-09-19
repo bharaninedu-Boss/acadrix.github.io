@@ -29,10 +29,26 @@ function normalizeResourcePath(path, regulation='r2021') {
     if (/^(https?:|#|\/)/i.test(path) || path.startsWith('data/')) return path;
     return regulation === 'r2025' ? `data/mechanical/r2025/${path.replace(/^\.\//,'')}` : path;
 }
+function normalizeResourcePathList(value, regulation) {
+    if (!Array.isArray(value)) return value;
+    return value.map(item => {
+        if (!item || typeof item !== 'object') return item;
+        const copy = {...item};
+        if (typeof copy.link === 'string') copy.link = normalizeResourcePath(copy.link, regulation);
+        return copy;
+    });
+}
 function normalizeSubject(subject, deptId, sem, regulation) {
     const copy={...subject,dept:deptId,sem,regulation};
     if(copy.resource) copy.resource=normalizeResourcePath(copy.resource,regulation);
-    if(Array.isArray(copy.units)) copy.units=copy.units.map(unit=>({...unit,notes:unit.notes?normalizeResourcePath(unit.notes,regulation):unit.notes}));
+    if(Array.isArray(copy.units)) copy.units=copy.units.map(unit=>{
+        if (!unit || typeof unit !== 'object') return unit;
+        const copyUnit={...unit};
+        if (typeof copyUnit.notes === 'string') copyUnit.notes=normalizeResourcePath(copyUnit.notes,regulation);
+        if (typeof copyUnit.link === 'string') copyUnit.link=normalizeResourcePath(copyUnit.link,regulation);
+        return copyUnit;
+    });
+    copy.pyqs=normalizeResourcePathList(copy.pyqs,regulation);
     ['importantQuestions','formulaSheet','solvedProblems','lastDayRevision','questionBank'].forEach(k=>{if(typeof copy[k]==='string') copy[k]=normalizeResourcePath(copy[k],regulation);});
     return copy;
 }
@@ -88,9 +104,12 @@ loadSemesterData=async function(deptId,sem,regulation=null){
 };
 
 renderSubjects=async function(container,deptId,sem,regulation=null){
+    const generation=window._ACADRIX_RENDER_GENERATION;
     const chosen=regulation||currentState.regulation||null;if(!isMechanical(deptId)||chosen!=='r2025')return originalRenderSubjects(container,deptId,sem);
     container.innerHTML=`<div class="breadcrumb"><span onclick="navigateTo('home')">Home</span> › <span onclick="navigateTo('semesters',{dept:'mech',regulation:'r2025'})">Mechanical Engineering</span> › <span onclick="navigateTo('semesters',{dept:'mech',regulation:'r2025'})">Regulation 2025</span> › <span>Semester ${sem}</span></div><h2>R-2025 · Semester ${sem}</h2><div id="subjectsGrid" class="grid"><div class="card">Loading R-2025 subjects…</div></div>`;
-    const subjects=await loadSemesterData(deptId,sem,'r2025'),grid=document.getElementById('subjectsGrid');
+    const subjects=await loadSemesterData(deptId,sem,'r2025');
+    if(generation!==window._ACADRIX_RENDER_GENERATION||currentState.view!=='subjects'||currentState.dept!==deptId||Number(currentState.sem)!==Number(sem)) return;
+    const grid=document.getElementById('subjectsGrid');
     if(!subjects.length){
         const status = regulation==='r2025' ? 'structure-ready' : 'unverified';
         grid.innerHTML=`<div class="card"><h3>Semester ${sem}</h3><p>R-2025 curriculum structure is reserved for this semester, but the subject list has not yet been independently verified.</p><p><strong>No R-2021 subjects are mixed into this page.</strong></p><small style="color:var(--text-secondary)">Status: ${status}</small></div>`;
@@ -100,8 +119,12 @@ renderSubjects=async function(container,deptId,sem,regulation=null){
 };
 
 renderSubjectDetails=async function(container,code){
+    const generation=window._ACADRIX_RENDER_GENERATION;
     const regulation=currentState.regulation||'r2021';if(!(currentState.dept==='mech'&&(regulation==='r2025'||regulation==='r2021')))return originalRenderSubjectDetails(container,code);
-    const subjects=await loadSemesterData('mech',currentState.sem||1,regulation),subject=subjects.find(s=>s.code&&s.code.toLowerCase()===String(code).toLowerCase());
+    const requestedSem=currentState.sem||1;
+    const subjects=await loadSemesterData('mech',requestedSem,regulation);
+    if(generation!==window._ACADRIX_RENDER_GENERATION||currentState.view!=='details'||currentState.subjectCode!==code||currentState.sem!==requestedSem) return;
+    const subject=subjects.find(s=>s.code&&s.code.toLowerCase()===String(code).toLowerCase());
     if(!subject){container.innerHTML=`<div class="breadcrumb"><span onclick="navigateTo('home')">Home</span> › <span>${regulationLabel(regulation)} Subject</span></div><div class="card"><h2>Subject not found</h2><p>The requested subject is not present in this semester's verified data.</p></div>`;return;}
     if(regulation==='r2021'){
         // Keep the established R-2021 resource renderer, but normalize its state
