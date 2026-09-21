@@ -7,10 +7,10 @@
 <title>ME3592 Solved Problems | R-2021 | ACADRIX</title>
 <meta name="description" content="ME3592 Metrology and Measurements R-2021 unit-wise solved problems for Anna University Mechanical Engineering Semester V.">
 <style>
-body{font-family:Arial,sans-serif;max-width:1050px;margin:auto;padding:20px;line-height:1.65;color:#172033;background:#f8fafc}
+:root{--bg:#f4f7fb;--surface:#fff;--soft:#f8fafc;--text:#172033;--muted:#64748b;--border:#e2e8f0;--blue:#2563eb;--green:#059669;--purple:#7c3aed;--shadow:0 12px 32px rgba(15,23,42,.08)}body{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;max-width:1120px;margin:auto;padding:20px;line-height:1.7;color:var(--text);background:radial-gradient(circle at 5% 0,#dbeafe 0,transparent 28%),var(--bg)}body.dark{--bg:#0b1220;--surface:#111b2e;--soft:#162238;--text:#e5edf9;--muted:#94a3b8;--border:#263653;--blue:#60a5fa;--green:#34d399;--purple:#c084fc;--shadow:0 14px 35px rgba(0,0,0,.24)}*{box-sizing:border-box}
 h1,h2,h3{color:#1d4ed8}.hero,.card,.note{background:#fff;border:1px solid #dbe4ef;border-radius:14px;padding:18px;margin:14px 0}
-.hero{background:#eff6ff}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
-.card a{color:#1d4ed8;text-decoration:none;font-weight:700}.tag{display:inline-block;background:#dbeafe;color:#1e40af;border-radius:999px;padding:4px 9px;font-size:.78rem;font-weight:700}.back{display:inline-block;margin-bottom:12px}
+.hero{background:linear-gradient(135deg,#102f63,#2563eb 55%,#4f46e5);color:#fff!important;border:0!important;padding:30px!important;border-radius:24px!important;box-shadow:0 18px 42px rgba(37,99,235,.18)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.card a{color:var(--blue);text-decoration:none;font-weight:700}.tag{display:inline-block;background:#dbeafe;color:#1e40af;border-radius:999px;padding:4px 9px;font-size:.78rem;font-weight:700}.back{display:inline-block;margin-bottom:12px}
 .small{font-size:.92rem;color:#64748b}@media(max-width:650px){body{padding:14px}}
 </style>
 </head>
@@ -23,6 +23,7 @@ h1,h2,h3{color:#1d4ed8}.hero,.card,.note{background:#fff;border:1px solid #dbe4e
 </section>
 <div class="note"><strong>Study method:</strong> Read the unit notes first, then solve the worked examples yourself. These are ACADRIX study resources; verified university-paper problems are labelled separately on the relevant pages.</div>
 <h2>Unit-wise Solved Problems</h2>
+<div class="tools" style="display:flex;gap:9px;align-items:center;flex-wrap:wrap;padding:10px;margin:18px 0;background:var(--surface);border:1px solid var(--border);border-radius:13px;box-shadow:var(--shadow)"><input id="problemSearch" type="search" placeholder="Search unit problems…" aria-label="Search unit problems" style="flex:1;min-width:220px;padding:9px 12px;border:1px solid var(--border);border-radius:9px;background:var(--soft);color:var(--text)"><span id="problemCount" style="color:var(--muted)">5 units shown</span><button id="darkBtn" type="button" style="padding:9px 11px;border:1px solid var(--border);border-radius:9px;background:var(--soft);color:var(--text);font-weight:700">🌙 Dark</button><button type="button" onclick="window.print()" style="padding:9px 11px;border:1px solid var(--border);border-radius:9px;background:var(--soft);color:var(--text);font-weight:700">🖨 Print</button></div>
 <div class="grid">
 <div class="card"><span class="tag">Unit I</span><h3>Basics of Metrology</h3><p>Mean, standard deviation, uncertainty and related measurement-data calculations.</p><a href="ME3592_Unit1_Solved_Problems.html">Open Unit I →</a></div>
 <div class="card"><span class="tag">Unit II</span><h3>Linear & Angular Measurement</h3><p>Instrument, comparator, sine-bar and angular-measurement numerical practice.</p><a href="ME3592_Unit2_Solved_Problems.html">Open Unit II →</a></div>
@@ -30,5 +31,6 @@ h1,h2,h3{color:#1d4ed8}.hero,.card,.note{background:#fff;border:1px solid #dbe4e
 <div class="card"><span class="tag">Unit IV</span><h3>Metrology of Surfaces</h3><p>GD&T, straightness, flatness, roundness, surface parameters, stylus, filters and 3D metrology.</p><a href="ME3592_Unit4_Solved_Problems.html">Open Unit IV →</a></div>
 <div class="card"><span class="tag">Unit V</span><h3>Advances in Metrology</h3><p>Laser, interferometer, ball-bar, CMM and advanced-metrology practice.</p><a href="ME3592_Unit5_Solved_Problems.html">Open Unit V →</a></div>
 </div>
+<script>(function(){const i=document.getElementById('problemSearch'),n=document.getElementById('problemCount'),b=document.getElementById('darkBtn'),cards=[...document.querySelectorAll('.grid .card')];function f(){const q=(i.value||'').toLowerCase().trim();let k=0;cards.forEach(x=>{const ok=!q||x.textContent.toLowerCase().includes(q);x.style.display=ok?'':'none';if(ok)k++});n.textContent=q?(k+' matching units'):'5 units shown'}i.addEventListener('input',f);b.addEventListener('click',()=>{document.body.classList.toggle('dark');b.textContent=document.body.classList.contains('dark')?'☀️ Light':'🌙 Dark'})})();</script>
 </body>
 </html>
