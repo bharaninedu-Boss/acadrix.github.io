@@ -86,24 +86,61 @@
 </div>
 <h2>4. Spring Types — 2/5/13-Mark Ready</h2>
 <div class="box"><ul><li><b>Helical spring:</b> wire wound into a helix; commonly used for compression, tension and torsion applications.</li><li><b>Open-coil helical spring:</b> coils have a helix angle that is not negligible; loading can involve torsion and bending effects.</li><li><b>Closed-coil helical spring:</b> coils are closely wound; compression springs primarily experience torsional shear in the wire.</li><li><b>Spiral spring:</b> strip/flat material wound in spiral form, used for energy storage and controlled rotation.</li><li><b>Leaf/laminated spring:</b> multiple leaves arranged to carry load and provide controlled deflection.</li><li><b>Disc spring:</b> conical-disc element useful for high force in compact axial space.</li><li><b>Conical spring:</b> spring whose coil diameter changes along its axis, useful where compact solid height or progressive behaviour is required.</li></ul></div>
-<h2>5. Worked Example A — Valve Spring From the Uploaded Notebook</h2>
+<h2>5. 📓 Uploaded Notebook — Helical Spring Design Examples</h2>
+<div class="source-note"><p><strong>Source:</strong> the following two examples are transcribed from the handwritten Unit IV pages uploaded in this conversation. The wording and numerical values are kept close to the source. Where the handwriting and the calculation appear inconsistent, the inconsistency is explicitly flagged rather than silently corrected.</p></div>
+
 <div class="box">
-<p><b>Visible notebook data:</b> maximum load ≈ 450 N, required deflection ≈ 12.5 mm, working shear stress ≈ 300 N/mm², G ≈ 0.8 × 10<sup>5</sup> N/mm², and a diameter value written as about 37.5 mm. The notebook then uses 37.5 mm directly in the spring calculations and obtains d ≈ 5.2 mm and N ≈ 3.8, rounded to about 4 active coils and 6 total coils.</p>
+<h3>Example 1 — Gas-engine valve spring</h3>
+<p><strong>Visible problem statement:</strong> A gas-engine valve spring is to have a mean diameter of about <strong>31.8 mm</strong>. It is required to sustain a maximum load of <strong>450 N</strong> with a corresponding deflection of <strong>12.5 mm</strong>. The spring is made of tempered wire and is subjected to repeated loading; a fatigue/working stress of about <strong>300 N/mm²</strong> is written. Take <strong>G = 0.8 × 10<sup>5</sup> N/mm²</strong>. Find the wire size and number of coils.</p>
+<p><strong>Notebook calculation:</strong> the subsequent calculation uses <strong>D = 37.5 mm</strong>, obtains approximately <strong>d = 5.2 mm</strong>, then approximately <strong>N = 3.8 ≈ 4 active coils</strong>, and finally <strong>N<sub>t</sub> = 4 + 2 = 6 coils</strong> for square and ground ends.</p>
+<div class="warning"><strong>Important source check:</strong> the visible statement appears to give a mean diameter of 31.8 mm, while the handwritten calculation substitutes 37.5 mm as D. These are not the same assumption. Do not memorise the final 5.2 mm/4-coil result as an unqualified answer. Verify the original problem statement before using it in an exam.</div>
+<h4>Notebook formula sequence</h4>
 <div class="formula">τ = K<sub>w</sub> · 8PD/(πd³)</div>
 <div class="formula">δ = 8PD³N/(Gd⁴)</div>
-<p><b>Notebook answer path:</b> estimate wire diameter from the stress condition → calculate spring index → calculate active coils from the deflection condition → add inactive/end coils → determine total coils.</p>
-<div class="warning"><b>Interpretation check:</b> the handwriting appears to call the 37.5 mm value a maximum/diameter value, but the calculation uses it as D. If 37.5 mm is actually the <em>outside diameter</em>, then the correct relation is D = 37.5 − d and the stress/deflection calculation should be iterated or solved consistently. Therefore the website should not present the handwritten 5.2 mm / 4 active-coil result as an unqualified official answer.</div>
+<div class="formula">N<sub>t</sub> = N + 2 &nbsp; (square and ground ends, as used in the notebook)</div>
+<p>For a rigorous design, calculate the spring index and Wahl factor consistently and then re-check the stress before accepting the trial wire diameter.</p>
 </div>
-<h2>6. Worked Example B — C<sub>50</sub> Helical Spring</h2>
+
 <div class="box">
-<p><b>Visible notebook data:</b> outside diameter D<sub>o</sub> = 80 mm, wire diameter d = 12 mm, axial load P = 1 kN, active coils N = 10, and G ≈ 0.89 × 10<sup>5</sup> N/mm².</p>
-<h3>Step 1 — Mean diameter</h3><div class="formula">D = D<sub>o</sub> − d = 80 − 12 = <b>68 mm</b></div>
-<h3>Step 2 — Spring index</h3><div class="formula">C = D/d = 68/12 = <b>5.667</b></div>
-<h3>Step 3 — Wahl factor</h3><div class="formula">K<sub>w</sub> = (4C−1)/(4C−4) + 0.615/C ≈ <b>1.271</b></div>
-<h3>Step 4 — Maximum shear stress</h3><div class="formula">τ<sub>max</sub> = K<sub>w</sub> 8PD/(πd³) ≈ <b>127 N/mm²</b></div>
-<h3>Step 5 — Deflection</h3><div class="formula">δ = 8PD³N/(Gd⁴) ≈ <b>13.6 mm</b></div>
-<p><b>Exam conclusion:</b> report mean diameter, spring index, Wahl factor, maximum shear stress and total deflection with units. If the question asks factor of safety, the material strength/allowable criterion must also be supplied.</p>
+<h3>Example 2 — C<sub>50</sub> steel helical spring</h3>
+<p><strong>Given in the uploaded notebook:</strong> outside diameter <strong>D<sub>o</sub> = 80 mm</strong>, wire diameter <strong>d = 12 mm</strong>, axial load <strong>P = 1 kN</strong>, number of coils <strong>N = 105</strong>, and modulus of rigidity <strong>G = 0.89 × 10<sup>5</sup> N/mm²</strong>.</p>
+<h4>Step 1 — Mean coil diameter</h4>
+<div class="formula">D = D<sub>o</sub> − d = 80 − 12 = <strong>68 mm</strong></div>
+<h4>Step 2 — Spring index</h4>
+<div class="formula">C = D/d = 68/12 = <strong>5.667</strong></div>
+<h4>Step 3 — Wahl stress factor</h4>
+<div class="formula">K<sub>w</sub> = (4C − 1)/(4C − 4) + 0.615/C</div>
+<div class="formula">K<sub>w</sub> ≈ <strong>1.269</strong></div>
+<h4>Step 4 — Maximum shear stress</h4>
+<div class="formula">τ<sub>max</sub> = K<sub>w</sub> · 8PD/(πd³)</div>
+<div class="formula">τ<sub>max</sub> = 1.269 × [8 × 1000 × 68/(π × 12³)]</div>
+<div class="formula">τ<sub>max</sub> ≈ <strong>127.2 N/mm²</strong></div>
+<h4>Step 5 — Total deflection</h4>
+<div class="formula">δ = 8PD³N/(Gd⁴)</div>
+<div class="formula">δ = [8 × 1000 × 68³ × 105]/[(0.89 × 10<sup>5</sup>) × 12⁴]</div>
+<div class="formula">δ ≈ <strong>143.1 mm</strong></div>
+<h4>Step 6 — Spring stiffness</h4>
+<div class="formula">k = P/δ = 1000/143.1 ≈ <strong>6.99 N/mm</strong></div>
+<p><strong>Final calculated values:</strong> D = 68 mm, C = 5.667, K<sub>w</sub> ≈ 1.269, τ<sub>max</sub> ≈ 127.2 MPa, δ ≈ 143.1 mm and k ≈ 6.99 N/mm.</p>
+<div class="warning"><strong>FOS note:</strong> the uploaded page does not clearly provide a yield/ultimate/allowable shear strength for calculating a numerical factor of safety. Therefore no FOS value is invented here.</div>
 </div>
+
+<h2>6. 🔢 Spring Numerical Master Method</h2>
+<div class="box">
+<ol>
+<li>List P, D<sub>o</sub>/D<sub>i</sub>/D, d, N, δ, G and allowable stress exactly as given.</li>
+<li>Identify whether the stated coil diameter is outside, inside or mean diameter.</li>
+<li>If outside diameter is given, calculate mean diameter using <strong>D = D<sub>o</sub> − d</strong>.</li>
+<li>Calculate spring index <strong>C = D/d</strong>.</li>
+<li>Calculate Wahl factor when corrected shear stress is required.</li>
+<li>Calculate maximum shear stress and compare it with the stated allowable/working stress.</li>
+<li>Use <strong>δ = 8PD³N/(Gd⁴)</strong> to determine or check active coils.</li>
+<li>Determine total coils from the stated end condition.</li>
+<li>Calculate solid length, free length and pitch when required.</li>
+<li>Re-check stress, deflection, spring index and practical dimensions.</li>
+</ol>
+</div>
+
 <h2>7. Full Helical Spring Design Procedure — 13-Mark Answer</h2>
 <div class="box"><ol><li>Write all given load, deflection, diameter restriction, material and stress data.</li><li>Identify whether the given diameter is mean, outside or inside diameter.</li><li>Select a trial spring index C or wire diameter according to the design procedure.</li><li>Calculate mean coil diameter D.</li><li>Calculate Wahl factor K<sub>w</sub>.</li><li>Determine corrected shear stress and compare it with the permissible value.</li><li>Determine active coils from the deflection/stiffness requirement.</li><li>Determine total coils from the specified end condition.</li><li>Calculate solid length.</li><li>Determine free length from the required deflection and clearances.</li><li>Calculate pitch and check coil spacing.</li><li>Check spring index, stress, deflection and practical dimensions.</li><li>Present the final design in a compact table.</li></ol></div>
 <h2>8. Concentric Springs — Design Checks</h2>
