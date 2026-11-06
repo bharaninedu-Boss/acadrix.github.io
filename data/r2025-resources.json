@@ -338,6 +338,18 @@
       "verification": "supplementary-notes-aligned-to-official-curriculum",
       "syllabusSource": "https://mce.edu.in/uploads/certificate/regulations_2025/cse_2025.pdf",
       "description": "Teaching notes for Linear Algebra, Digital Principles and Computer Organization, Object Oriented Programming, and Basic Electrical and Electronics Engineering."
+    },
+    {
+      "id": "be-cse-sem2-support",
+      "title": "B.E. CSE Semester II — Supporting Subject Notes and Practical Guide",
+      "type": "course-notes-collection",
+      "programme": "be-cse",
+      "semester": 2,
+      "url": "r2025-notes/be-cse-sem2-support.html",
+      "provider": "ACADRIX",
+      "verification": "supplementary-notes-aligned-to-official-curriculum",
+      "syllabusSource": "https://cac.annauniv.edu/aidetails/afug_2025_fu/CSIE/BE%20CSE.pdf",
+      "description": "Study guide for Applied Physics (CSIE) II, English Essentials II, Re-Engineering for Innovation, audit/activity courses and the foreign-language option."
     }
   ],
   "editorialRules": [
