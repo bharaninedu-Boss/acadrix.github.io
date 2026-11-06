@@ -28,10 +28,10 @@ function renderDirectory(){
 const previousRoute=handleHashRoute;
 handleHashRoute=function(){
  const h=(location.hash||'').replace(/^#/,'');
- if(h==='/r2025'||h==='/r2025/') {currentState={view:'r2025Directory'};closeMenu();renderDirectory();return;}
+ if(h==='/r2025'||h==='/r2025/') {currentState={view:'r2025Directory'};closeMenu();return;}
  previousRoute();
 };
 const oldRenderHome=renderHome;
 renderHome=async function(container){await oldRenderHome(container);if(!container||currentState.view!=='home'&&currentState.view!=='browse')return;const section=document.createElement('section');section.className='r25-home-promo';section.innerHTML='<div><span class="r25-eyebrow">NEW · REGULATION 2025</span><h2>All Anna University UG Programmes</h2><p>Browse the R-2025 programme directory across engineering, technology and architecture.</p></div><a class="r25-cta" href="#/r2025">Explore R-2025 programmes <span>→</span></a>';const anchor=container.querySelector('#deptGrid')?.parentElement;if(anchor)anchor.insertAdjacentElement('afterend',section);};
-window.openR2025Directory=openDirectory;
+const baseRender=render;\nrender=function(){if(currentState.view==='r2025Directory'){renderDirectory();window.scrollTo(0,0);return;}baseRender();};\nwindow.openR2025Directory=openDirectory;
 })();
