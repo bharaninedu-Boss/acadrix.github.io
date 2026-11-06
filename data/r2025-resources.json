@@ -134,6 +134,25 @@
       "verification": "official-pdf-verified"
     },
     {
+      "id": "barch-regulations",
+      "title": "Academic Regulations 2025 — B.Arch.",
+      "type": "regulations",
+      "audience": "B.Arch.",
+      "url": "https://cac.annauniv.edu/aidetails/reg/R2025/B.%20Arch.%20-R25.pdf",
+      "provider": "Anna University",
+      "verification": "official-pdf-verified",
+      "description": "Separate academic regulations for B.Arch."
+    },
+    {
+      "id": "mech-smart-manufacturing",
+      "title": "B.E. Mechanical Engineering (specialised in Smart Manufacturing) — R-2025 curriculum",
+      "type": "programme-curriculum",
+      "programme": "be-mech-smart-mfg",
+      "url": "https://cac.annauniv.edu/aidetails/afug_2025_fu/Mech/B.E.%2C%20Mechanical%20Engineering%20%28specialised%20in%20Smart%20Mfg..pdf",
+      "provider": "Anna University",
+      "verification": "official-pdf-verified"
+    },
+    {
       "id": "third-party-r2025-index",
       "title": "R-2025 syllabus download index",
       "type": "supplementary-index",
