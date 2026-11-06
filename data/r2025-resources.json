@@ -275,6 +275,18 @@
       "provider": "ACADRIX",
       "verification": "original-notes-based-on-official-syllabus",
       "syllabusSource": "https://mce.edu.in/department/uploads/certificate/regulations_2025/cse_2025.pdf"
+    },
+    {
+      "id": "notes-en25c01",
+      "title": "EN25C01 English Essentials I — ACADRIX exam study notes",
+      "type": "course-notes",
+      "courseCode": "EN25C01",
+      "programme": "be-cse",
+      "semester": 1,
+      "url": "r2025-notes/EN25C01-english-essentials-1.html",
+      "provider": "ACADRIX",
+      "verification": "original-notes-based-on-official-syllabus",
+      "syllabusSource": "https://mce.edu.in/department/uploads/certificate/regulations_2025/cse_2025.pdf"
     }
   ],
   "editorialRules": [
