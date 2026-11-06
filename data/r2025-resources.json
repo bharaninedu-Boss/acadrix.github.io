@@ -299,6 +299,18 @@
       "provider": "ACADRIX",
       "verification": "original-notes-based-on-official-syllabus",
       "syllabusSource": "https://cac.annauniv.edu/aidetails/afug_2025_fu/Tech/B.Tech%20Biotech.pdf"
+    },
+    {
+      "id": "notes-me25c03",
+      "title": "ME25C03 Introduction to Mechanical Engineering — ACADRIX exam study notes",
+      "type": "course-notes",
+      "courseCode": "ME25C03",
+      "programme": "be-mech",
+      "semester": 1,
+      "url": "r2025-notes/ME25C03-introduction-to-mechanical-engineering.html",
+      "provider": "ACADRIX",
+      "verification": "original-notes-based-on-official-syllabus",
+      "syllabusSource": "https://jit.net.in/assets/syllabus/B.E.Mech-2025_Regulation.pdf"
     }
   ],
   "editorialRules": [
