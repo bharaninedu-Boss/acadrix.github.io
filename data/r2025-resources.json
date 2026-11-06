@@ -171,6 +171,24 @@
       "verification": "official-pdf-verified"
     },
     {
+      "id": "biotechnology",
+      "title": "B.Tech. Biotechnology — R-2025 curriculum",
+      "type": "programme-curriculum",
+      "programme": "btech-biotech",
+      "url": "https://cac.annauniv.edu/aidetails/afug_2025_fu/Tech/B.Tech%20Biotech.pdf",
+      "provider": "Anna University",
+      "verification": "official-pdf-verified"
+    },
+    {
+      "id": "fashion-technology",
+      "title": "B.Tech. Fashion Technology — R-2025 curriculum",
+      "type": "programme-curriculum",
+      "programme": "btech-fashion",
+      "url": "https://cac.annauniv.edu/aidetails/afug_2025_fu/Tech/B.Tech.%20Fashion%20Technology.pdf",
+      "provider": "Anna University",
+      "verification": "official-pdf-verified"
+    },
+    {
       "id": "third-party-r2025-index",
       "title": "R-2025 syllabus download index",
       "type": "supplementary-index",
