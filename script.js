@@ -344,7 +344,43 @@ async function renderSubjects(container, deptId, sem) {
     if (generation !== window._ACADRIX_RENDER_GENERATION || currentState.view !== 'subjects' || currentState.dept !== deptId || Number(currentState.sem) !== Number(sem)) return;
     const grid = document.getElementById('subjectsGrid');
     if (!subjects || subjects.length === 0) {
-        grid.innerHTML = `<p>Content coming soon for this semester.</p>`;
+        if (deptId === 'cse' && Number(sem) === 1) {
+            grid.innerHTML = `
+                <section class="card" style="grid-column:1/-1">
+                    <h3 style="margin-top:0">R-2021 subject catalogue</h3>
+                    <p>This semester's R-2021 subject list has not yet been added.</p>
+                    <div style="margin-top:14px;padding:16px;border:1px solid var(--border-color,#64748b);border-radius:12px">
+                        <p style="font-weight:700;margin:0 0 6px">R-2025 · Semester 1 study notes</p>
+                        <p style="margin:0 0 12px;color:var(--text-secondary)">The following verified course-note pages are available separately for the R-2025 B.E. CSE curriculum.</p>
+                        <div id="cseR2025Notes" class="grid"><p>Loading R-2025 notes…</p></div>
+                        <p style="margin:14px 0 0"><a href="#/r2025">Browse the complete R-2025 programme directory →</a></p>
+                    </div>
+                </section>`;
+            fetch('data/r2025-resources.json').then(response => {
+                if (!response.ok) throw new Error('Unable to load R-2025 notes');
+                return response.json();
+            }).then(data => {
+                if (generation !== window._ACADRIX_RENDER_GENERATION || currentState.view !== 'subjects' || currentState.dept !== deptId || Number(currentState.sem) !== 1) return;
+                const root = document.getElementById('cseR2025Notes');
+                if (!root) return;
+                const notes = (data.resources || []).filter(item => item.type === 'course-notes' && item.programme === 'be-cse' && Number(item.semester) === 1);
+                if (!notes.length) {
+                    root.innerHTML = '<p>R-2025 notes are being organised. Please use the programme directory.</p>';
+                    return;
+                }
+                root.innerHTML = notes.map(item => `
+                    <a class="card" href="${item.url}" style="text-decoration:none;display:block">
+                        <p style="color:var(--accent-color);font-weight:700;margin:0">${item.courseCode || ''}</p>
+                        <h3 style="margin:6px 0">${item.title || item.courseCode}</h3>
+                        <p style="margin:0;color:var(--text-secondary)">Open study notes →</p>
+                    </a>`).join('');
+            }).catch(() => {
+                const root = document.getElementById('cseR2025Notes');
+                if (root) root.innerHTML = '<p>Could not load the R-2025 notes list. Use the programme directory above.</p>';
+            });
+        } else {
+            grid.innerHTML = `<p>Content coming soon for this semester.</p>`;
+        }
         return;
     }
 
