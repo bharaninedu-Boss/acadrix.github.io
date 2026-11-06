@@ -344,28 +344,35 @@ async function renderSubjects(container, deptId, sem) {
     if (generation !== window._ACADRIX_RENDER_GENERATION || currentState.view !== 'subjects' || currentState.dept !== deptId || Number(currentState.sem) !== Number(sem)) return;
     const grid = document.getElementById('subjectsGrid');
     if (!subjects || subjects.length === 0) {
-        if (deptId === 'cse' && Number(sem) === 1) {
-            grid.innerHTML = `
-                <section class="card" style="grid-column:1/-1">
-                    <h3 style="margin-top:0">R-2021 subject catalogue</h3>
-                    <p>This semester's R-2021 subject list has not yet been added.</p>
-                    <div style="margin-top:14px;padding:16px;border:1px solid var(--border-color,#64748b);border-radius:12px">
-                        <p style="font-weight:700;margin:0 0 6px">R-2025 · Semester 1 study notes</p>
-                        <p style="margin:0 0 12px;color:var(--text-secondary)">The following verified course-note pages are available separately for the R-2025 B.E. CSE curriculum.</p>
-                        <div id="cseR2025Notes" class="grid"><p>Loading R-2025 notes…</p></div>
-                        <p style="margin:14px 0 0"><a href="#/r2025">Browse the complete R-2025 programme directory →</a></p>
-                    </div>
-                </section>`;
+        const showCseFirstSemNotes = deptId === 'cse' && Number(sem) === 1;
+        grid.innerHTML = `
+            <section class="card" style="grid-column:1/-1">
+                <h3 style="margin-top:0">Subject resources for this semester</h3>
+                <p><b>The R-2021 subject list has not been added here yet.</b></p>
+                <p style="color:var(--text-secondary)">This is a catalogue availability message; it does not mean that your semester has no subjects. R-2021 and R-2025 curricula are maintained separately on ACADRIX.</p>
+                <div style="margin-top:16px;padding:16px;border:1px solid var(--border-color,#64748b);border-radius:12px">
+                    <p style="font-weight:700;margin:0 0 6px">Looking for R-2025 materials?</p>
+                    <p style="margin:0 0 12px;color:var(--text-secondary)">Browse the Anna University R-2025 programme directory. Course lists and notes are displayed only when the corresponding curriculum details have been checked.</p>
+                    <a class="card" href="#/r2025" style="display:inline-flex;text-decoration:none;padding:10px 14px">Browse R-2025 programmes →</a>
+                </div>
+                ${showCseFirstSemNotes ? `
+                    <div style="margin-top:16px;padding:16px;border:1px solid var(--border-color,#64748b);border-radius:12px">
+                        <p style="font-weight:700;margin:0 0 6px">Available R-2025 · CSE Semester 1 notes</p>
+                        <p style="margin:0 0 12px;color:var(--text-secondary)">These course notes are mapped to the B.E. CSE R-2025 Semester I curriculum.</p>
+                        <div id="cseR2025Notes" class="grid"><p>Loading verified course notes…</p></div>
+                    </div>` : ''}
+            </section>`;
+        if (showCseFirstSemNotes) {
             fetch('data/r2025-resources.json').then(response => {
                 if (!response.ok) throw new Error('Unable to load R-2025 notes');
                 return response.json();
             }).then(data => {
-                if (generation !== window._ACADRIX_RENDER_GENERATION || currentState.view !== 'subjects' || currentState.dept !== deptId || Number(currentState.sem) !== 1) return;
+                if (generation !== window._ACADRIX_RENDER_GENERATION || currentState.view !== 'subjects' || currentState.dept !== deptId || Number(currentState.sem) !== Number(sem)) return;
                 const root = document.getElementById('cseR2025Notes');
                 if (!root) return;
                 const notes = (data.resources || []).filter(item => item.type === 'course-notes' && item.programme === 'be-cse' && Number(item.semester) === 1);
                 if (!notes.length) {
-                    root.innerHTML = '<p>R-2025 notes are being organised. Please use the programme directory.</p>';
+                    root.innerHTML = '<p>Course notes are being organised. Please use the R-2025 programme directory.</p>';
                     return;
                 }
                 root.innerHTML = notes.map(item => `
@@ -376,10 +383,8 @@ async function renderSubjects(container, deptId, sem) {
                     </a>`).join('');
             }).catch(() => {
                 const root = document.getElementById('cseR2025Notes');
-                if (root) root.innerHTML = '<p>Could not load the R-2025 notes list. Use the programme directory above.</p>';
+                if (root) root.innerHTML = '<p>Could not load the course-note list. Please use the R-2025 programme directory.</p>';
             });
-        } else {
-            grid.innerHTML = `<p>Content coming soon for this semester.</p>`;
         }
         return;
     }
