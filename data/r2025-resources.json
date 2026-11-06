@@ -363,6 +363,19 @@
       "verification": "original-notes-based-on-official-syllabus",
       "syllabusSource": "https://mce.edu.in/uploads/certificate/regulations_2025/cse_2025.pdf",
       "description": "Five syllabus areas: weaving and ceramic technology; design and construction; manufacturing technology; agriculture and irrigation; Scientific Tamil and Tamil computing."
+    },
+    {
+      "id": "common-first-year-library",
+      "title": "Common First-Year Resource Library — R-2025 Semesters I–II",
+      "type": "shared-course-library",
+      "programme": "all-ug",
+      "regulation": "R-2025",
+      "semester": "1-2",
+      "url": "r2025-notes/common-first-year-library.html",
+      "provider": "ACADRIX",
+      "verification": "cross-programme-curriculum-comparison",
+      "syllabusSource": "https://cac.annauniv.edu/aidetails/ai_ug_cands_2025ft.html",
+      "description": "Shared notes index for verified common courses, with explicit warnings for programme-specific syllabus differences. Initial comparison includes CSE, Civil, EEE, EIE, Aeronautical Engineering and CSBS."
     }
   ],
   "editorialRules": [
