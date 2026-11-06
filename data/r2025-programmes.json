@@ -1,0 +1,264 @@
+{
+  "regulation": "R-2025",
+  "batch": "2025-2026",
+  "scope": "Undergraduate programmes for affiliated non-autonomous institutions",
+  "source": "https://cac.annauniv.edu/aidetails/ai_ug_cands_2025ft.html",
+  "sourceLabel": "Anna University Centre for Academic Courses — R-2025 UG Curricula & Syllabi",
+  "note": "Programme directory transcribed from Anna University's published R-2025 UG curriculum listing. Individual semester course tables and syllabi PDFs must be verified and added programme-by-programme; no course codes or subject lists are fabricated.",
+  "faculties": [
+    {
+      "name": "Civil Engineering",
+      "icon": "🏗️",
+      "programmes": [
+        [
+          "be-civil",
+          "B.E. Civil Engineering"
+        ],
+        [
+          "btech-agri",
+          "B.Tech. Agricultural Engineering"
+        ],
+        [
+          "be-geoinformatics",
+          "B.E. Geo Informatics Engineering"
+        ],
+        [
+          "be-environmental",
+          "B.E. Environmental Engineering"
+        ],
+        [
+          "be-civil-environmental",
+          "B.E. Civil Engineering (Environmental Engineering)"
+        ],
+        [
+          "be-environmental-science",
+          "B.E. Environmental Science and Technology"
+        ]
+      ]
+    },
+    {
+      "name": "Computer Science & Information Engineering",
+      "icon": "💻",
+      "programmes": [
+        [
+          "be-cse",
+          "B.E. Computer Science and Engineering"
+        ],
+        [
+          "btech-it",
+          "B.Tech. Information Technology"
+        ],
+        [
+          "be-computer-communication",
+          "B.E. Computer and Communication Engineering"
+        ],
+        [
+          "btech-aids",
+          "B.Tech. Artificial Intelligence and Data Science"
+        ],
+        [
+          "btech-csbs",
+          "B.Tech. Computer Science and Business Systems"
+        ],
+        [
+          "be-cse-ds",
+          "B.E. Computer Science and Engineering (Data Science)"
+        ],
+        [
+          "be-cse-iot",
+          "B.E. Computer Science and Engineering (Internet of Things)"
+        ],
+        [
+          "be-cse-cyber",
+          "B.E. Computer Science and Engineering (Cyber Security)"
+        ],
+        [
+          "be-cse-aiml",
+          "B.E. Computer Science and Engineering (Artificial Intelligence and Machine Learning)"
+        ],
+        [
+          "be-cse-ai",
+          "B.E. Computer Science and Engineering (Artificial Intelligence)"
+        ],
+        [
+          "be-cse-design",
+          "B.E. Computer Science and Design"
+        ]
+      ]
+    },
+    {
+      "name": "Mechanical Engineering",
+      "icon": "⚙️",
+      "programmes": [
+        [
+          "be-aero",
+          "B.E. Aeronautical Engineering"
+        ],
+        [
+          "be-auto",
+          "B.E. Automobile Engineering"
+        ],
+        [
+          "be-mech",
+          "B.E. Mechanical Engineering"
+        ],
+        [
+          "be-manufacturing",
+          "B.E. Manufacturing Engineering"
+        ],
+        [
+          "be-industrial",
+          "B.E. Industrial Engineering and Management"
+        ],
+        [
+          "be-marine",
+          "B.E. Marine Engineering"
+        ],
+        [
+          "be-mechatronics",
+          "B.E. Mechatronics Engineering"
+        ],
+        [
+          "be-mech-automation",
+          "B.E. Mechanical and Automation Engineering"
+        ],
+        [
+          "be-robotics",
+          "B.E. Robotics and Automation"
+        ],
+        [
+          "be-aerospace",
+          "B.E. Aerospace Engineering"
+        ],
+        [
+          "be-mech-auto-specialisation",
+          "B.E. Mechanical (Specialized in Automobile) Engineering"
+        ],
+        [
+          "be-mech-smart-mfg",
+          "B.E. Mechanical Engineering (Specialized in Smart Manufacturing)"
+        ],
+        [
+          "be-robotics-ai",
+          "B.E. Robotics and Artificial Intelligence"
+        ]
+      ]
+    },
+    {
+      "name": "Electronics & Communication Engineering",
+      "icon": "📡",
+      "programmes": [
+        [
+          "be-ece",
+          "B.E. Electronics and Communication Engineering"
+        ],
+        [
+          "be-vlsi",
+          "B.E. Electronics Engineering (VLSI Design & Technology)"
+        ],
+        [
+          "be-electronics-computer",
+          "B.E. Electronics and Computer Engineering"
+        ],
+        [
+          "be-biomedical",
+          "B.E. Biomedical Engineering"
+        ],
+        [
+          "be-medical-electronics",
+          "B.E. Medical Electronics"
+        ]
+      ]
+    },
+    {
+      "name": "Electrical Engineering",
+      "icon": "⚡",
+      "programmes": [
+        [
+          "be-eee",
+          "B.E. Electrical and Electronics Engineering"
+        ],
+        [
+          "be-ei",
+          "B.E. Electronics and Instrumentation Engineering"
+        ],
+        [
+          "be-ice",
+          "B.E. Instrumentation and Control Engineering"
+        ],
+        [
+          "be-electrical-computer",
+          "B.E. Electrical and Computer Engineering"
+        ],
+        [
+          "be-eee-training",
+          "B.E. Electrical and Electronics Engineering (Training Integrated Programme)"
+        ]
+      ]
+    },
+    {
+      "name": "Faculty of Technology",
+      "icon": "🧪",
+      "programmes": [
+        [
+          "btech-chemical",
+          "B.Tech. Chemical Engineering"
+        ],
+        [
+          "btech-chemical-electro",
+          "B.Tech. Chemical and Electrochemical Engineering"
+        ],
+        [
+          "btech-petroleum",
+          "B.Tech. Petroleum Engineering"
+        ],
+        [
+          "btech-petrochemical",
+          "B.Tech. Petrochemical Technology"
+        ],
+        [
+          "btech-biotech",
+          "B.Tech. Biotechnology"
+        ],
+        [
+          "btech-pharma",
+          "B.Tech. Pharmaceutical Technology"
+        ],
+        [
+          "btech-food",
+          "B.Tech. Food Technology"
+        ],
+        [
+          "btech-plastics",
+          "B.Tech. Plastics Technology"
+        ],
+        [
+          "btech-textile",
+          "B.Tech. Textile Technology"
+        ],
+        [
+          "btech-textile-chem",
+          "B.Tech. Textile Chemistry"
+        ],
+        [
+          "btech-fashion",
+          "B.Tech. Fashion Technology"
+        ]
+      ]
+    },
+    {
+      "name": "Architecture & Planning",
+      "icon": "📐",
+      "programmes": [
+        [
+          "barch",
+          "B.Arch."
+        ],
+        [
+          "bdes",
+          "B.Des."
+        ]
+      ]
+    }
+  ]
+}
