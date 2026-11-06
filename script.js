@@ -344,7 +344,8 @@ async function renderSubjects(container, deptId, sem) {
     if (generation !== window._ACADRIX_RENDER_GENERATION || currentState.view !== 'subjects' || currentState.dept !== deptId || Number(currentState.sem) !== Number(sem)) return;
     const grid = document.getElementById('subjectsGrid');
     if (!subjects || subjects.length === 0) {
-        const showCseFirstSemNotes = deptId === 'cse' && Number(sem) === 1;
+        const r2025Programme = deptId === 'cse' ? 'be-cse' : (deptId === 'mech' ? 'be-mech' : null);
+        const showKnownProgrammeNotes = !!r2025Programme && Number(sem) === 1;
         grid.innerHTML = `
             <section class="card" style="grid-column:1/-1">
                 <h3 style="margin-top:0">Subject resources for this semester</h3>
@@ -355,22 +356,22 @@ async function renderSubjects(container, deptId, sem) {
                     <p style="margin:0 0 12px;color:var(--text-secondary)">Browse the Anna University R-2025 programme directory. Course lists and notes are displayed only when the corresponding curriculum details have been checked.</p>
                     <a class="card" href="#/r2025" style="display:inline-flex;text-decoration:none;padding:10px 14px">Browse R-2025 programmes →</a>
                 </div>
-                ${showCseFirstSemNotes ? `
+                ${showKnownProgrammeNotes ? `
                     <div style="margin-top:16px;padding:16px;border:1px solid var(--border-color,#64748b);border-radius:12px">
-                        <p style="font-weight:700;margin:0 0 6px">Available R-2025 · CSE Semester 1 notes</p>
-                        <p style="margin:0 0 12px;color:var(--text-secondary)">These course notes are mapped to the B.E. CSE R-2025 Semester I curriculum.</p>
-                        <div id="cseR2025Notes" class="grid"><p>Loading verified course notes…</p></div>
+                        <p style="font-weight:700;margin:0 0 6px">Available R-2025 · Semester 1 course notes</p>
+                        <p style="margin:0 0 12px;color:var(--text-secondary)">These course notes are mapped to the selected programme's R-2025 Semester I curriculum, along with verified common UG notes.</p>
+                        <div id="semesterR2025Notes" class="grid"><p>Loading verified course notes…</p></div>
                     </div>` : ''}
             </section>`;
-        if (showCseFirstSemNotes) {
+        if (showKnownProgrammeNotes) {
             fetch('data/r2025-resources.json').then(response => {
                 if (!response.ok) throw new Error('Unable to load R-2025 notes');
                 return response.json();
             }).then(data => {
                 if (generation !== window._ACADRIX_RENDER_GENERATION || currentState.view !== 'subjects' || currentState.dept !== deptId || Number(currentState.sem) !== Number(sem)) return;
-                const root = document.getElementById('cseR2025Notes');
+                const root = document.getElementById('semesterR2025Notes');
                 if (!root) return;
-                const notes = (data.resources || []).filter(item => item.type === 'course-notes' && (item.programme === 'be-cse' || item.programme === 'all-ug') && Number(item.semester) === 1);
+                const notes = (data.resources || []).filter(item => item.type === 'course-notes' && (item.programme === r2025Programme || item.programme === 'all-ug') && Number(item.semester) === 1);
                 if (!notes.length) {
                     root.innerHTML = '<p>Course notes are being organised. Please use the R-2025 programme directory.</p>';
                     return;
