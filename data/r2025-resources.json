@@ -326,6 +326,18 @@
       "verification": "curriculum-map-based-on-official-pdf",
       "syllabusSource": "https://cac.annauniv.edu/aidetails/afug_2025_fu/CSIE/BE%20CSE.pdf",
       "description": "Eight-semester curriculum map, published course codes, elective streams, existing study-note links, practical and project roadmap. Detailed subject notes are marked where not yet prepared."
+    },
+    {
+      "id": "be-cse-sem2-core",
+      "title": "B.E. CSE Semester II — Core Subject Study Notes",
+      "type": "course-notes-collection",
+      "programme": "be-cse",
+      "semester": 2,
+      "url": "r2025-notes/be-cse-sem2-core.html",
+      "provider": "ACADRIX",
+      "verification": "supplementary-notes-aligned-to-official-curriculum",
+      "syllabusSource": "https://mce.edu.in/uploads/certificate/regulations_2025/cse_2025.pdf",
+      "description": "Teaching notes for Linear Algebra, Digital Principles and Computer Organization, Object Oriented Programming, and Basic Electrical and Electronics Engineering."
     }
   ],
   "editorialRules": [
