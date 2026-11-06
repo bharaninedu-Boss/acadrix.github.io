@@ -219,6 +219,18 @@
       "syllabusSource": "https://cac.annauniv.edu/aidetails/afug_2025_fu/Tech/B.E.%20Chemical%20and%20Electrochemical.pdf"
     },
     {
+      "id": "notes-cs25c01",
+      "title": "CS25C01 Computer Programming: C — ACADRIX exam study notes",
+      "type": "course-notes",
+      "courseCode": "CS25C01",
+      "programme": "be-cse",
+      "semester": 1,
+      "url": "r2025-notes/CS25C01-computer-programming-c.html",
+      "provider": "ACADRIX",
+      "verification": "original-notes-based-on-official-syllabus",
+      "syllabusSource": "https://mce.edu.in/department/uploads/certificate/regulations_2025/cse_2025.pdf"
+    },
+    {
       "id": "third-party-r2025-index",
       "title": "R-2025 syllabus download index",
       "type": "supplementary-index",
