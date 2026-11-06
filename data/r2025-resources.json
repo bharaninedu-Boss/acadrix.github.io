@@ -311,6 +311,18 @@
       "provider": "ACADRIX",
       "verification": "original-notes-based-on-official-syllabus",
       "syllabusSource": "https://jit.net.in/assets/syllabus/B.E.Mech-2025_Regulation.pdf"
+    },
+    {
+      "id": "notes-me25c04",
+      "title": "ME25C04 Makerspace — ACADRIX practical manual and viva preparation",
+      "type": "course-notes",
+      "courseCode": "ME25C04",
+      "programme": "be-mech",
+      "semester": 1,
+      "url": "r2025-notes/ME25C04-makerspace.html",
+      "provider": "ACADRIX",
+      "verification": "original-practical-manual-based-on-official-syllabus",
+      "syllabusSource": "https://jit.net.in/assets/syllabus/B.E.Mech-2025_Regulation.pdf"
     }
   ],
   "editorialRules": [
