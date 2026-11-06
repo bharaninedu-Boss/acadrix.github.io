@@ -1,0 +1,145 @@
+{
+  "regulation": "R-2025",
+  "batch": "2025-2026",
+  "scope": "Anna University affiliated non-autonomous undergraduate programmes",
+  "lastVerified": "2026-11-07",
+  "resources": [
+    {
+      "id": "official-ug-directory",
+      "title": "R-2025 UG Curriculum & Syllabi — programme directory",
+      "type": "official-directory",
+      "audience": "All UG programmes",
+      "url": "https://cac.annauniv.edu/aidetails/ai_ug_cands_2025ft.html",
+      "provider": "Anna University Centre for Academic Courses",
+      "verification": "official-page-verified",
+      "description": "Master listing for the 2025–2026 first-year batch. Use this to locate the programme-specific curriculum PDF."
+    },
+    {
+      "id": "be-btech-regulations",
+      "title": "Academic Regulations 2025 — B.E. / B.Tech.",
+      "type": "regulations",
+      "audience": "B.E. and B.Tech.",
+      "url": "https://cac.annauniv.edu/aidetails/reg/R2025/ACADEMIC%20REGULATIONS%202025%29.pdf",
+      "provider": "Anna University",
+      "verification": "official-pdf-verified",
+      "description": "Academic regulations for B.E./B.Tech. students admitted from 2025–2026 in affiliated non-autonomous institutions."
+    },
+    {
+      "id": "bdes-regulations",
+      "title": "Academic Regulations 2025 — B.Des.",
+      "type": "regulations",
+      "audience": "B.Des.",
+      "url": "https://cac.annauniv.edu/aidetails/reg/R2025/B.%20DES%20-R25.pdf",
+      "provider": "Anna University",
+      "verification": "official-pdf-verified",
+      "description": "Separate academic regulations for B.Des.; do not apply the B.E./B.Tech. regulation to this programme."
+    },
+    {
+      "id": "agricultural-engineering",
+      "title": "B.Tech. Agricultural Engineering — R-2025 curriculum",
+      "type": "programme-curriculum",
+      "programme": "btech-agri",
+      "url": "https://cac.annauniv.edu/aidetails/afug_2025_fu/Civil/B.Tech.%20Agricultural%20Engineering.pdf",
+      "provider": "Anna University",
+      "verification": "official-pdf-verified"
+    },
+    {
+      "id": "civil-environmental",
+      "title": "B.E. Civil Engineering (Environmental Engineering) — R-2025 curriculum",
+      "type": "programme-curriculum",
+      "programme": "be-civil-environmental",
+      "url": "https://cac.annauniv.edu/aidetails/afug_2025_fu/Civil/B.E.%20Civil%20%28Environmental%20Engg%29.pdf",
+      "provider": "Anna University",
+      "verification": "official-pdf-verified"
+    },
+    {
+      "id": "cse-iot",
+      "title": "B.E. CSE (Internet of Things) — R-2025 curriculum",
+      "type": "programme-curriculum",
+      "programme": "be-cse-iot",
+      "url": "https://cac.annauniv.edu/aidetails/afug_2025_fu/CSIE/B.E.%20CSE%20%28IoT%29.pdf",
+      "provider": "Anna University",
+      "verification": "official-pdf-verified"
+    },
+    {
+      "id": "cse-data-science",
+      "title": "B.E. CSE (Data Science) — R-2025 curriculum",
+      "type": "programme-curriculum",
+      "programme": "be-cse-ds",
+      "url": "https://cac.annauniv.edu/aidetails/afug_2025_fu/CSIE/B.E.%20CSE%20%28DS%29.pdf",
+      "provider": "Anna University",
+      "verification": "official-pdf-verified"
+    },
+    {
+      "id": "automobile-engineering",
+      "title": "B.E. Automobile Engineering — R-2025 curriculum",
+      "type": "programme-curriculum",
+      "programme": "be-auto",
+      "url": "https://cac.annauniv.edu/aidetails/afug_2025_fu/Mech/B.E.%20Automobile%20Engineering.pdf",
+      "provider": "Anna University",
+      "verification": "official-pdf-verified"
+    },
+    {
+      "id": "biomedical-engineering",
+      "title": "B.E. Biomedical Engineering — R-2025 curriculum",
+      "type": "programme-curriculum",
+      "programme": "be-biomedical",
+      "url": "https://cac.annauniv.edu/aidetails/afug_2025_fu/ECE/B.E.%20Biomedical%20.pdf",
+      "provider": "Anna University",
+      "verification": "official-pdf-verified"
+    },
+    {
+      "id": "ece",
+      "title": "B.E. Electronics and Communication Engineering — R-2025 curriculum",
+      "type": "programme-curriculum",
+      "programme": "be-ece",
+      "url": "https://cac.annauniv.edu/aidetails/afug_2025_fu/ECE/B.E%20ECE.pdf",
+      "provider": "Anna University",
+      "verification": "official-pdf-verified"
+    },
+    {
+      "id": "eee",
+      "title": "B.E. Electrical and Electronics Engineering — R-2025 curriculum",
+      "type": "programme-curriculum",
+      "programme": "be-eee",
+      "url": "https://cac.annauniv.edu/aidetails/afug_2025_fu/EEE/B.E.%20EEE.pdf",
+      "provider": "Anna University",
+      "verification": "official-pdf-verified"
+    },
+    {
+      "id": "eee-training",
+      "title": "B.E. EEE (Training Integrated Programme) — R-2025 curriculum",
+      "type": "programme-curriculum",
+      "programme": "be-eee-training",
+      "url": "https://cac.annauniv.edu/aidetails/afug_2025_fu/EEE/B.E.%20EEE%20-%28Training%20Integrated%29%20.pdf",
+      "provider": "Anna University",
+      "verification": "official-pdf-verified"
+    },
+    {
+      "id": "chemical-engineering",
+      "title": "B.Tech. Chemical Engineering — R-2025 curriculum",
+      "type": "programme-curriculum",
+      "programme": "btech-chemical",
+      "url": "https://cac.annauniv.edu/aidetails/afug_2025_fu/Tech/B.Tech%20Chemical.pdf",
+      "provider": "Anna University",
+      "verification": "official-pdf-verified"
+    },
+    {
+      "id": "third-party-r2025-index",
+      "title": "R-2025 syllabus download index",
+      "type": "supplementary-index",
+      "audience": "Selected UG and PG programmes",
+      "url": "https://stucor.in/annauniv-syllabus/anna-university-r2025-ug-pg-syllabus/",
+      "provider": "STUCOR (third-party)",
+      "verification": "third-party-page-found",
+      "description": "Convenience index for selected branches. Cross-check every file against Anna University's official curriculum before using it."
+    }
+  ],
+  "editorialRules": [
+    "Prefer Anna University official curriculum PDFs and regulations.",
+    "Mark third-party notes, question banks and summaries separately from official documents.",
+    "Do not publish R-2021 notes as R-2025 notes unless the course and syllabus have been checked line-by-line.",
+    "Do not invent direct PDF URLs. When a programme PDF is not individually verified, link to the official R-2025 directory.",
+    "Extract course codes, semester placement, credits, course outcomes and unit contents from the official programme PDF before creating subject pages."
+  ]
+}
