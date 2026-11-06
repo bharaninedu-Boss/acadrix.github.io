@@ -1,0 +1,29 @@
+/* ACADRIX R-2025 programme directory */
+.r25-hero{margin:28px 0 24px;padding:clamp(24px,5vw,48px);border-radius:24px;background:linear-gradient(135deg,#10233f,#173f60 60%,#176b75);color:#fff}
+.r25-hero h1{font-size:clamp(2rem,5vw,3.2rem);margin:10px 0}
+.r25-hero p{max-width:760px;line-height:1.7;color:#e2edf5}
+.r25-eyebrow{font-size:.75rem;letter-spacing:.14em;font-weight:800;color:#78d8d1}
+.r25-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.r25-meta span{border:1px solid #ffffff55;border-radius:999px;padding:7px 12px;font-size:.82rem}
+.r25-directory{margin:28px 0 50px}
+.r25-directory-head{display:flex;justify-content:space-between;align-items:end;gap:18px;flex-wrap:wrap;margin-bottom:18px}
+.r25-directory-head h2{margin-bottom:4px}
+.r25-directory-head p{margin:0;color:var(--text-secondary)}
+#r25-search{width:min(100%,360px);padding:13px 15px;border:1px solid var(--border-color,#d6dce5);border-radius:12px;background:var(--card-bg,#fff);color:var(--text-primary);font:inherit}
+.r25-faculty{margin:22px 0;padding:20px;border:1px solid var(--border-color,#dce2e9);border-radius:18px;background:var(--card-bg,transparent)}
+.r25-faculty h3{display:flex;align-items:center;gap:10px;margin:0 0 15px}
+.r25-faculty h3 span{font-size:1.35rem}
+.r25-faculty h3 small{margin-left:auto;font-size:.78rem;color:var(--text-secondary);font-weight:600}
+.r25-programme-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:10px}
+.r25-programme{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px;border:1px solid var(--border-color,#e0e5eb);border-radius:12px;color:var(--text-primary);text-decoration:none;transition:transform .15s,border-color .15s}
+.r25-programme:hover{transform:translateY(-2px);border-color:var(--accent-color,#3985bd)}
+.r25-programme span{font-weight:600;font-size:.91rem}
+.r25-programme b{white-space:nowrap;font-size:.73rem;color:var(--accent-color,#3985bd)}
+.r25-source,.r25-note{font-size:.85rem;color:var(--text-secondary);line-height:1.6}
+.r25-source a{color:var(--accent-color,#3985bd)}
+.r25-note{padding:12px 15px;border-left:3px solid var(--accent-color,#3985bd);background:var(--surface-secondary,rgba(120,130,145,.08))}
+.r25-empty{padding:24px;text-align:center;color:var(--text-secondary)}
+.r25-home-promo{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin:30px 0;padding:24px;border:1px solid var(--border-color,#dce2e9);border-radius:18px;background:var(--card-bg,transparent)}
+.r25-home-promo h2{margin:7px 0}.r25-home-promo p{margin:0;color:var(--text-secondary)}
+.r25-cta{display:inline-flex;gap:12px;align-items:center;padding:12px 17px;border-radius:12px;background:var(--accent-color,#2563a6);color:#fff;text-decoration:none;font-weight:700}
+@media(max-width:640px){.r25-directory-head{align-items:stretch}.r25-home-promo{align-items:flex-start}.r25-cta{width:100%;justify-content:center}.r25-programme{align-items:flex-start;flex-direction:column;gap:5px}}
