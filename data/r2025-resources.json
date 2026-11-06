@@ -313,6 +313,19 @@
       "provider": "ACADRIX",
       "verification": "original-practical-manual-based-on-official-syllabus",
       "syllabusSource": "https://jit.net.in/assets/syllabus/B.E.Mech-2025_Regulation.pdf"
+    },
+    {
+      "id": "be-cse-complete-hub",
+      "title": "B.E. Computer Science and Engineering — Complete R-2025 Learning Hub",
+      "type": "programme-learning-hub",
+      "programme": "be-cse",
+      "regulation": "R-2025",
+      "semester": "1-8",
+      "url": "r2025-notes/be-cse-complete.html",
+      "provider": "ACADRIX",
+      "verification": "curriculum-map-based-on-official-pdf",
+      "syllabusSource": "https://cac.annauniv.edu/aidetails/afug_2025_fu/CSIE/BE%20CSE.pdf",
+      "description": "Eight-semester curriculum map, published course codes, elective streams, existing study-note links, practical and project roadmap. Detailed subject notes are marked where not yet prepared."
     }
   ],
   "editorialRules": [
