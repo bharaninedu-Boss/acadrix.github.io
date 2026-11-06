@@ -125,6 +125,15 @@
       "verification": "official-pdf-verified"
     },
     {
+      "id": "aeronautical-engineering",
+      "title": "B.E. Aeronautical Engineering — R-2025 curriculum",
+      "type": "programme-curriculum",
+      "programme": "be-aero",
+      "url": "https://cac.annauniv.edu/aidetails/afug_2025_fu/Mech/B.E.%20Aeronautical%20Engineering.pdf",
+      "provider": "Anna University",
+      "verification": "official-pdf-verified"
+    },
+    {
       "id": "third-party-r2025-index",
       "title": "R-2025 syllabus download index",
       "type": "supplementary-index",
