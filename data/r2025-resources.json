@@ -153,6 +153,24 @@
       "verification": "official-pdf-verified"
     },
     {
+      "id": "industrial-engineering-management",
+      "title": "B.E. Industrial Engineering and Management — R-2025 curriculum",
+      "type": "programme-curriculum",
+      "programme": "be-industrial",
+      "url": "https://cac.annauniv.edu/aidetails/afug_2025_fu/Mech/B.E.%20Industrial%20Engineering%20and%20Management.pdf",
+      "provider": "Anna University",
+      "verification": "official-pdf-verified"
+    },
+    {
+      "id": "textile-chemistry",
+      "title": "B.Tech. Textile Chemistry — R-2025 curriculum",
+      "type": "programme-curriculum",
+      "programme": "btech-textile-chem",
+      "url": "https://cac.annauniv.edu/aidetails/afug_2025_fu/Tech/B.Tech.Textile%20Chemistry.pdf",
+      "provider": "Anna University",
+      "verification": "official-pdf-verified"
+    },
+    {
       "id": "third-party-r2025-index",
       "title": "R-2025 syllabus download index",
       "type": "supplementary-index",
