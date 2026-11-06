@@ -189,6 +189,36 @@
       "verification": "official-pdf-verified"
     },
     {
+      "id": "notes-me25c01",
+      "title": "ME25C01 Engineering Drawing — ACADRIX exam study notes",
+      "type": "course-notes",
+      "courseCode": "ME25C01",
+      "url": "r2025-notes/ME25C01-engineering-drawing.html",
+      "provider": "ACADRIX",
+      "verification": "original-notes-based-on-official-syllabus",
+      "syllabusSource": "https://cac.annauniv.edu/aidetails/afug_2025_fu/Mech/B.E.%20Mechanical%20Engineering.pdf"
+    },
+    {
+      "id": "notes-cs25c02",
+      "title": "CS25C02 Computer Programming: Python — ACADRIX exam study notes",
+      "type": "course-notes",
+      "courseCode": "CS25C02",
+      "url": "r2025-notes/CS25C02-python-programming.html",
+      "provider": "ACADRIX",
+      "verification": "original-notes-based-on-official-syllabus",
+      "syllabusSource": "https://cac.annauniv.edu/aidetails/afug_2025_fu/Civil/B.Tech.%20Agricultural%20Engineering.pdf"
+    },
+    {
+      "id": "notes-cy25c01",
+      "title": "CY25C01 Applied Chemistry I — ACADRIX exam study notes",
+      "type": "course-notes",
+      "courseCode": "CY25C01",
+      "url": "r2025-notes/CY25C01-applied-chemistry.html",
+      "provider": "ACADRIX",
+      "verification": "original-notes-based-on-official-syllabus",
+      "syllabusSource": "https://cac.annauniv.edu/aidetails/afug_2025_fu/Tech/B.E.%20Chemical%20and%20Electrochemical.pdf"
+    },
+    {
       "id": "third-party-r2025-index",
       "title": "R-2025 syllabus download index",
       "type": "supplementary-index",
