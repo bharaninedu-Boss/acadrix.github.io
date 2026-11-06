@@ -263,6 +263,18 @@
       "provider": "ACADRIX",
       "verification": "original-notes-based-on-official-syllabus",
       "syllabusSource": "https://mce.edu.in/department/uploads/certificate/regulations_2025/cse_2025.pdf"
+    },
+    {
+      "id": "notes-ph25c01",
+      "title": "PH25C01 Applied Physics I — ACADRIX exam study notes",
+      "type": "course-notes",
+      "courseCode": "PH25C01",
+      "programme": "be-cse",
+      "semester": 1,
+      "url": "r2025-notes/PH25C01-applied-physics-1.html",
+      "provider": "ACADRIX",
+      "verification": "original-notes-based-on-official-syllabus",
+      "syllabusSource": "https://mce.edu.in/department/uploads/certificate/regulations_2025/cse_2025.pdf"
     }
   ],
   "editorialRules": [
