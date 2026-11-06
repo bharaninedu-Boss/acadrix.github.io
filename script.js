@@ -370,7 +370,7 @@ async function renderSubjects(container, deptId, sem) {
                 if (generation !== window._ACADRIX_RENDER_GENERATION || currentState.view !== 'subjects' || currentState.dept !== deptId || Number(currentState.sem) !== Number(sem)) return;
                 const root = document.getElementById('cseR2025Notes');
                 if (!root) return;
-                const notes = (data.resources || []).filter(item => item.type === 'course-notes' && item.programme === 'be-cse' && Number(item.semester) === 1);
+                const notes = (data.resources || []).filter(item => item.type === 'course-notes' && (item.programme === 'be-cse' || item.programme === 'all-ug') && Number(item.semester) === 1);
                 if (!notes.length) {
                     root.innerHTML = '<p>Course notes are being organised. Please use the R-2025 programme directory.</p>';
                     return;
