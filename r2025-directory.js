@@ -22,6 +22,10 @@ function renderDirectory(){
  getData().then(data=>{
    const root=document.getElementById('r25-faculties');if(!root)return;
    const faculties=data.catalog.faculties;
+   const coreDocs=data.resources.resources.filter(x=>x.type==='regulations'||x.type==='supplementary-index');
+   const core=document.createElement('section');core.className='r25-core-resources';
+   core.innerHTML='<h2>Core R-2025 documents</h2><div class="r25-programme-grid">'+coreDocs.map(d=>'<a class="r25-programme" href="'+d.url+'" target="_blank" rel="noopener"><span>'+esc(d.title)+'</span><b>'+(d.type==='supplementary-index'?'Third-party index ↗':'Official regulation PDF ↗')+'</b></a>').join('')+'</div>';
+   const directory=document.querySelector('.r25-directory');const directoryHead=directory?.querySelector('.r25-directory-head');if(directory&&directoryHead)directory.insertBefore(core,directoryHead);
    const total=faculties.reduce((n,f)=>n+f.programmes.length,0);
    const verified=data.resources.resources.filter(x=>x.type==='programme-curriculum'&&x.verification==='official-pdf-verified').length;
    document.getElementById('r25-count').textContent=total+' programmes across '+faculties.length+' faculties · '+verified+' direct official curriculum PDFs verified';
