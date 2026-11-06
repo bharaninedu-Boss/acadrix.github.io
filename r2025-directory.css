@@ -27,3 +27,8 @@
 .r25-home-promo h2{margin:7px 0}.r25-home-promo p{margin:0;color:var(--text-secondary)}
 .r25-cta{display:inline-flex;gap:12px;align-items:center;padding:12px 17px;border-radius:12px;background:var(--accent-color,#2563a6);color:#fff;text-decoration:none;font-weight:700}
 @media(max-width:640px){.r25-directory-head{align-items:stretch}.r25-home-promo{align-items:flex-start}.r25-cta{width:100%;justify-content:center}.r25-programme{align-items:flex-start;flex-direction:column;gap:5px}}
+
+
+/* Core regulation and resource links */
+.r25-core-resources{margin:1.5rem 0 2rem;padding:1.25rem;border:1px solid var(--border-color,rgba(148,163,184,.25));border-radius:18px;background:var(--card-bg,rgba(148,163,184,.06))}
+.r25-core-resources h2{margin:0 0 1rem;font-size:1.15rem}
