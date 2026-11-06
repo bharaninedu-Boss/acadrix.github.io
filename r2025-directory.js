@@ -28,7 +28,7 @@ function renderDirectory(){
 const previousRoute=handleHashRoute;
 handleHashRoute=function(){
  const h=(location.hash||'').replace(/^#/,'');
- if(h==='/r2025'||h==='/r2025/') {currentState={view:'r2025Directory'};closeMenu();return;}
+ if(h==='/r2025'||h==='/r2025/') {currentState={view:'r2025Directory'};closeMenu();render();return;}
  previousRoute();
 };
 const oldRenderHome=renderHome;
