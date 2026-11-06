@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0f172a">
+<title>CS25C02 Computer Programming: Python | R-2025 Exam Study Notes | ACADRIX</title>
+<meta name="description" content="R-2025 CS25C02 Python programming teacher-style notes with algorithms, flowcharts, data types, control structures, functions, strings, collections, files and packages.">
+<link rel="canonical" href="https://bharaninedu-boss.github.io/Acadrix/r2025-notes/CS25C02-python-programming.html">
+<style>
+:root{--bg:#f3f6fb;--paper:#fff;--ink:#182338;--muted:#5d6b80;--line:#dce4ef;--blue:#2457a7;--blue-soft:#edf4ff;--green:#147a58;--amber:#9a5b10;--shadow:0 10px 30px rgba(25,45,75,.07)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.72 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}.wrap{max-width:1120px;margin:auto;padding:22px}.top{display:flex;justify-content:space-between;gap:12px;margin:4px 0 18px}.brand{font-weight:900;color:var(--ink);text-decoration:none}.brand span{color:var(--blue)}a{color:var(--blue)}.hero{padding:34px;border-radius:24px;background:linear-gradient(130deg,#123d36,#16765b 65%,#299875);color:#fff;box-shadow:0 18px 40px rgba(20,122,88,.16)}.eyebrow{font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#d9fbe9}.hero h1{font-size:clamp(2rem,5vw,3rem);line-height:1.12;margin:10px 0}.hero p{max-width:800px;color:#e7fff3}.meta{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}.meta span{padding:5px 10px;border:1px solid #ffffff55;border-radius:99px;font-size:.84rem}.layout{display:grid;grid-template-columns:245px minmax(0,1fr);gap:22px;margin-top:22px}.toc,.panel,.unit,.callout,.example{background:var(--paper);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}.toc{padding:18px;position:sticky;top:18px;align-self:start}.toc a{display:block;padding:6px 8px;border-radius:8px;color:var(--muted);text-decoration:none;font-size:.91rem}.toc a:hover{background:var(--blue-soft);color:var(--blue)}main{min-width:0}.panel{padding:22px;margin-bottom:18px}.unit{padding:24px;margin-bottom:18px;scroll-margin-top:18px}.panel h2,.unit h2{margin:0 0 12px;font-size:1.55rem}.unit h2{color:var(--blue);border-bottom:1px solid var(--line);padding-bottom:12px}.unit h3{font-size:1.13rem;margin:24px 0 8px}.tag{display:inline-block;font-size:.76rem;font-weight:800;letter-spacing:.04em;padding:4px 9px;border-radius:99px;background:var(--blue-soft);color:var(--blue);margin-bottom:8px}.callout{padding:15px 17px;margin:16px 0;border-left:4px solid var(--blue);background:#f8fbff;box-shadow:none}.callout.green{border-left-color:var(--green);background:#f3fbf7}.callout.amber{border-left-color:#c17b20;background:#fffaf1}.example{padding:16px 18px;margin:15px 0;box-shadow:none}.example h3{margin:0 0 8px;color:var(--blue)}pre{overflow-x:auto;background:#101827;color:#e7eefb;border-radius:12px;padding:16px;line-height:1.55;font-size:.9rem}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}.inline{background:#eef3f9;padding:2px 5px;border-radius:5px;font-family:ui-monospace,monospace}.steps{counter-reset:step;list-style:none;padding:0}.steps li{counter-increment:step;position:relative;padding:8px 8px 8px 42px}.steps li:before{content:counter(step);position:absolute;left:0;top:7px;width:28px;height:28px;border-radius:50%;background:var(--blue-soft);color:var(--blue);font-weight:800;text-align:center;line-height:28px}.table-wrap{overflow-x:auto;margin:12px 0}table{width:100%;border-collapse:collapse;min-width:520px;font-size:.93rem}th,td{padding:10px 12px;text-align:left;border:1px solid var(--line);vertical-align:top}th{background:#edf4ff;color:#1e467f}.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.mini{background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:14px}.mini b{display:block;margin-bottom:5px}.footer{padding:22px 0 40px;color:var(--muted);font-size:.88rem}@media(max-width:820px){.layout{grid-template-columns:1fr}.toc{position:static}.toc nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px}.hero{padding:25px}.unit,.panel{padding:18px}}@media(max-width:520px){.wrap{padding:13px}.top{flex-direction:column}.two{grid-template-columns:1fr}}@media print{body{background:#fff}.top,.toc,.footer{display:none}.layout{display:block}.hero{background:#fff;color:#111;box-shadow:none;border:1px solid #bbb}.hero p,.eyebrow{color:#333}.unit,.panel{box-shadow:none;break-inside:avoid}}
+</style></head><body><div class="wrap">
+<div class="top"><a class="brand" href="../index.html">ACA<span>DRIX</span> · R-2025</a><a href="../index.html#/r2025">← Back to R-2025 directory</a></div>
+<header class="hero"><div class="eyebrow">R-2025 · Foundational programming course</div><h1>Computer Programming: Python</h1><p>Learn to convert a problem into a working program. These notes follow the official course sequence and focus on understanding, writing, tracing and explaining Python programs in an examination.</p><div class="meta"><span>Course code: CS25C02</span><span>Credits: 3</span><span>Theory + Practical</span><span>Exam study notes</span></div></header>
+<div class="layout"><aside class="toc"><b>Study contents</b><nav>
+<a href="#syllabus">Syllabus map</a><a href="#basics">1. Python foundations</a><a href="#control">2. Control structures</a><a href="#functions">3. Functions</a><a href="#collections">4. Strings and collections</a><a href="#files">5. File operations</a><a href="#packages">6. Packages</a><a href="#exam">Program-writing method</a><a href="#practice">Practice questions</a><a href="#revision">Quick revision</a><a href="#sources">Sources</a></nav></aside>
+<main>
+<section class="panel" id="syllabus"><span class="tag">OFFICIAL SYLLABUS MAP</span><h2>Course objectives and sequence</h2><p>The R-2025 syllabus describes CS25C02 as a foundational programming course intended to develop the ability to analyse and solve computational problems, and to build problem-solving, critical-thinking and modular-programming skills.</p><div class="two"><div class="mini"><b>Programming foundations</b>Problem analysis, algorithms, flowcharts, pseudocode, variables, data types, operators and built-in functions.</div><div class="mini"><b>Program development</b>Control structures, functions, strings, collections, files, modules, scientific packages and small projects.</div></div><div class="callout amber"><b>Course structure:</b> The official syllabus includes practical exercises under each topic. These notes explain the theory and provide sample programs; students must also run and modify programs in a Python environment.</div></section>
+
+<section class="unit" id="basics"><span class="tag">TOPIC 1</span><h2>Introduction to Python and problem solving</h2>
+<h3>1.1 What is Python?</h3><p>Python is a high-level, general-purpose programming language. It is designed with readable syntax and supports procedural, object-oriented and functional programming styles. It is widely used for automation, data analysis, scientific computing, web applications and artificial intelligence.</p><h3>1.2 Problem-solving sequence</h3><ol class="steps"><li><b>Understand the problem:</b> identify the required output and the information supplied as input.</li><li><b>Analyse the problem:</b> identify the formula, conditions or logical steps needed.</li><li><b>Design the solution:</b> write an algorithm, flowchart or pseudocode.</li><li><b>Write the program:</b> translate the logic into Python statements.</li><li><b>Test the program:</b> use normal, boundary and unusual inputs.</li><li><b>Debug and document:</b> correct errors and add meaningful comments.</li></ol>
+<h3>1.3 Algorithm, flowchart and pseudocode</h3><div class="two"><div class="mini"><b>Algorithm</b>A finite, ordered set of unambiguous steps to solve a problem.</div><div class="mini"><b>Flowchart</b>A graphical representation of program logic using standard symbols and arrows.</div><div class="mini"><b>Pseudocode</b>A language-independent description of the logic using structured statements.</div><div class="mini"><b>Program</b>The executable implementation of the designed logic in a programming language.</div></div>
+<h4>Common flowchart symbols</h4><div class="table-wrap"><table><thead><tr><th>Symbol</th><th>Meaning</th><th>Use</th></tr></thead><tbody><tr><td>Oval</td><td>Start / Stop</td><td>Beginning or end of a process.</td></tr><tr><td>Parallelogram</td><td>Input / Output</td><td>Read data or display a result.</td></tr><tr><td>Rectangle</td><td>Process</td><td>Calculation or assignment.</td></tr><tr><td>Diamond</td><td>Decision</td><td>Condition with branches such as Yes/No.</td></tr><tr><td>Arrow</td><td>Flow line</td><td>Shows the direction of execution.</td></tr></tbody></table></div>
+<h3>1.4 Interactive mode and script mode</h3><p><b>Interactive mode:</b> statements are entered at the Python prompt and executed immediately. It is useful for quick experiments and checking expressions.</p><p><b>Script mode:</b> statements are written in a file (usually with the <span class="inline">.py</span> extension) and executed as a program. It is suitable for complete programs, repeated execution and submission of practical work.</p>
+<h3>1.5 Variables, reserved words and data types</h3><p>A variable is a name that refers to a value. Python creates a variable when a value is assigned to it; a separate type declaration is not normally required.</p><pre><code>student = "Ravi"
+age = 19
+height = 1.72
+is_present = True
+
+print(student, age, height, is_present)
+print(type(age))</code></pre>
+<div class="table-wrap"><table><thead><tr><th>Data type</th><th>Example</th><th>Purpose</th></tr></thead><tbody><tr><td>int</td><td><code>count = 12</code></td><td>Whole numbers.</td></tr><tr><td>float</td><td><code>mass = 2.5</code></td><td>Numbers with decimal parts.</td></tr><tr><td>complex</td><td><code>z = 2 + 3j</code></td><td>Complex numbers.</td></tr><tr><td>str</td><td><code>name = "ACADRIX"</code></td><td>Text.</td></tr><tr><td>bool</td><td><code>valid = True</code></td><td>Logical truth values.</td></tr><tr><td>list</td><td><code>marks = [70, 80, 90]</code></td><td>Ordered, mutable collection.</td></tr><tr><td>tuple</td><td><code>point = (3, 4)</code></td><td>Ordered, immutable collection.</td></tr><tr><td>set</td><td><code>codes = {1, 2, 3}</code></td><td>Collection of unique elements.</td></tr><tr><td>dict</td><td><code>student = {"id": 7}</code></td><td>Key-value mapping.</td></tr></tbody></table></div>
+<p><b>Identifier rules:</b> names may contain letters, digits and underscores; they cannot begin with a digit; Python keywords cannot be used as identifiers; names are case-sensitive. Use meaningful names such as <code>total_marks</code> rather than <code>x1</code> when the purpose is known.</p>
+<h3>1.6 Operators and expressions</h3><div class="table-wrap"><table><thead><tr><th>Operator group</th><th>Operators</th><th>Example</th></tr></thead><tbody><tr><td>Arithmetic</td><td><code>+ - * / // % **</code></td><td><code>17 // 5</code> gives 3; <code>17 % 5</code> gives 2.</td></tr><tr><td>Comparison</td><td><code>== != &gt; &lt; &gt;= &lt;=</code></td><td><code>age &gt;= 18</code></td></tr><tr><td>Logical</td><td><code>and or not</code></td><td><code>age &gt;= 18 and valid</code></td></tr><tr><td>Assignment</td><td><code>= += -= *= /=</code></td><td><code>total += mark</code></td></tr><tr><td>Membership</td><td><code>in, not in</code></td><td><code>5 in [2, 5, 8]</code></td></tr><tr><td>Identity</td><td><code>is, is not</code></td><td>Checks object identity, not ordinary value equality.</td></tr></tbody></table></div>
+<h3>1.7 Input, output and type conversion</h3><pre><code>length = float(input("Enter length in metres: "))
+width = float(input("Enter width in metres: "))
+
+area = length * width
+print("Area =", area, "m^2")</code></pre><p>The <code>input()</code> function returns text. Convert it using <code>int()</code>, <code>float()</code> or another suitable conversion before performing numeric calculations.</p>
+<div class="example"><h3>Worked example: area of a rectangle</h3><p><b>Problem:</b> Read length and breadth and display area.</p><p><b>Algorithm:</b> Start → Read L and B → Calculate A = L × B → Display A → Stop.</p><pre><code>length = float(input("Length: "))
+breadth = float(input("Breadth: "))
+area = length * breadth
+print("Area of rectangle =", area)</code></pre><p><b>Sample input:</b> 8 and 5. <b>Output:</b> Area of rectangle = 40.0</p></div>
+</section>
+
+<section class="unit" id="control"><span class="tag">TOPIC 2</span><h2>Control Structures</h2><p>Control structures determine the order in which statements execute. Python uses indentation to define a block of statements. Statements belonging to the same block must use consistent indentation.</p>
+<h3>2.1 Conditional statements</h3><pre><code>mark = int(input("Enter mark: "))
+
+if mark >= 50:
+    print("Pass")
+else:
+    print("Fail")</code></pre><p><code>if</code> tests a condition. <code>elif</code> tests another condition when the earlier condition is false. <code>else</code> handles the remaining case.</p>
+<div class="example"><h3>Worked example: grade classification</h3><pre><code>mark = int(input("Enter mark: "))
+
+if mark < 0 or mark > 100:
+    print("Invalid mark")
+elif mark >= 90:
+    print("Grade O")
+elif mark >= 80:
+    print("Grade A+")
+elif mark >= 70:
+    print("Grade A")
+elif mark >= 60:
+    print("Grade B+")
+elif mark >= 50:
+    print("Grade B")
+else:
+    print("RA / Fail")</code></pre><p><b>Reasoning:</b> Test the highest range first. If lower limits are checked first, a mark of 95 could be incorrectly classified in a lower grade.</p></div>
+<h3>2.2 while loop</h3><p>A <code>while</code> loop repeats as long as its condition remains true. Update the loop variable so that the loop eventually terminates.</p><pre><code>n = 1
+while n <= 5:
+    print(n)
+    n += 1</code></pre><h3>2.3 for loop</h3><p>A <code>for</code> loop iterates over items in a sequence or other iterable. The <code>range()</code> function generates a sequence of integers.</p><pre><code>for n in range(1, 6):
+    print(n)</code></pre><div class="table-wrap"><table><thead><tr><th>Expression</th><th>Generated values</th></tr></thead><tbody><tr><td><code>range(5)</code></td><td>0, 1, 2, 3, 4</td></tr><tr><td><code>range(2, 6)</code></td><td>2, 3, 4, 5</td></tr><tr><td><code>range(1, 10, 2)</code></td><td>1, 3, 5, 7, 9</td></tr></tbody></table></div>
+<h3>2.4 Nested loops and jump statements</h3><p>A nested loop is a loop inside another loop. It is useful for tables, patterns and two-dimensional data. <code>break</code> terminates the nearest loop; <code>continue</code> skips the remaining statements in the current iteration; <code>pass</code> is a placeholder statement that performs no action.</p><pre><code># Multiplication table from 1 to 3
+for i in range(1, 4):
+    for j in range(1, 6):
+        print(i, "x", j, "=", i * j)
+    print()</code></pre>
+<div class="callout amber"><b>Common errors:</b> forgetting the colon, incorrect indentation, using <code>=</code> instead of <code>==</code> in a condition, and creating an infinite while loop by failing to update the condition variable.</div>
+</section>
+
+<section class="unit" id="functions"><span class="tag">TOPIC 3</span><h2>Functions</h2><p>A function is a named, reusable block of code that performs a particular task. Functions reduce repetition, divide a large problem into manageable parts and make programs easier to test.</p>
+<h3>3.1 Defining and calling a function</h3><pre><code>def rectangle_area(length, breadth):
+    area = length * breadth
+    return area
+
+result = rectangle_area(8, 5)
+print("Area =", result)</code></pre><p><code>def</code> defines a function. The function name is followed by parentheses and a colon. The indented body contains the statements. A function call executes the function. <code>return</code> sends a result back to the caller.</p>
+<h3>3.2 Parameters and arguments</h3><div class="table-wrap"><table><thead><tr><th>Term</th><th>Meaning</th></tr></thead><tbody><tr><td>Formal parameter</td><td>Name written in the function definition.</td></tr><tr><td>Actual argument</td><td>Value or expression supplied during the function call.</td></tr><tr><td>Return value</td><td>Result sent back using the return statement.</td></tr><tr><td>Named argument</td><td>Argument supplied using the parameter name.</td></tr></tbody></table></div>
+<pre><code>def student_result(name, mark):
+    print(name, "scored", mark)
+
+student_result("Anu", 86)             # positional arguments
+student_result(mark=86, name="Anu")   # named arguments</code></pre>
+<h3>3.3 Recursion</h3><p>Recursion occurs when a function calls itself. A recursive solution must contain a <b>base case</b> that stops further calls; otherwise the calls continue until Python raises a recursion-depth error.</p><pre><code>def factorial(n):
+    if n == 0 or n == 1:   # base case
+        return 1
+    return n * factorial(n - 1)
+
+print(factorial(5))</code></pre><p>For this example, 5! = 5 × 4 × 3 × 2 × 1 = 120.</p>
+<h3>3.4 Lambda functions</h3><p>A lambda expression creates a small anonymous function containing a single expression.</p><pre><code>square = lambda x: x * x
+print(square(6))   # 36</code></pre>
+<div class="callout green"><b>Exam presentation:</b> For a function question, show the function definition, explain each parameter, show the function call, and state the output. If recursion is asked, clearly identify the base case and recursive case.</div>
+</section>
+
+<section class="unit" id="collections"><span class="tag">TOPIC 4</span><h2>Strings and Collections</h2>
+<h3>4.1 Strings</h3><p>A string is an immutable sequence of characters. Strings can be created using single, double or triple quotes. Indexing starts at zero; negative indexing counts from the end.</p><pre><code>word = "ENGINEER"
+print(word[0])       # E
+print(word[-1])      # R
+print(word[1:4])     # NGI
+print(len(word))     # 8</code></pre>
+<h4>Common string operations</h4><div class="table-wrap"><table><thead><tr><th>Operation</th><th>Purpose</th><th>Example</th></tr></thead><tbody><tr><td>Comparison</td><td>Compare strings lexicographically.</td><td><code>"abc" == "abc"</code></td></tr><tr><td>Formatting</td><td>Insert values into text.</td><td><code>f"Area={area}"</code></td></tr><tr><td>Slicing</td><td>Extract a portion.</td><td><code>s[1:5]</code></td></tr><tr><td>split()</td><td>Divide a string into a list.</td><td><code>"a,b".split(",")</code></td></tr><tr><td>strip()</td><td>Remove leading/trailing whitespace or specified characters.</td><td><code>" hi ".strip()</code></td></tr><tr><td>replace()</td><td>Return a string with occurrences replaced.</td><td><code>s.replace("a","b")</code></td></tr></tbody></table></div>
+<h3>4.2 Lists</h3><p>A list is an ordered, mutable collection. It can contain elements of different data types. Lists are written using square brackets.</p><pre><code>marks = [72, 85, 68, 91]
+marks.append(78)
+marks[0] = 75
+
+print(marks)
+print("Maximum =", max(marks))
+print("Total =", sum(marks))</code></pre><p>Common methods include <code>append()</code>, <code>extend()</code>, <code>insert()</code>, <code>remove()</code>, <code>pop()</code>, <code>sort()</code> and <code>reverse()</code>.</p>
+<h3>4.3 Tuples</h3><p>A tuple is an ordered, immutable collection. It is suitable for values that should remain fixed after creation.</p><pre><code>point = (12, 8)
+x, y = point
+print("x =", x, "y =", y)</code></pre>
+<h3>4.4 Sets</h3><p>A set is an unordered collection of unique elements. Duplicate values are removed. Sets support union, intersection and difference operations.</p><pre><code>A = {1, 2, 3, 4}
+B = {3, 4, 5, 6}
+print(A | B)   # union
+print(A & B)   # intersection
+print(A - B)   # difference</code></pre>
+<h3>4.5 Dictionaries</h3><p>A dictionary stores values as key-value pairs. Keys are unique and are used to access the associated values.</p><pre><code>student = {"name": "Meena", "mark": 88}
+student["department"] = "ECE"
+student["mark"] = 92
+del student["department"]
+
+print(student["name"])
+print(student)</code></pre>
+<h3>4.6 Searching and sorting a list</h3><pre><code>numbers = [34, 12, 56, 23, 9]
+
+# Linear search
+target = 23
+found = False
+for value in numbers:
+    if value == target:
+        found = True
+        break
+
+print("Found" if found else "Not found")
+
+# Sorting
+numbers.sort()
+print(numbers)</code></pre>
+<div class="callout amber"><b>Do not confuse:</b> Lists are mutable; tuples are immutable; sets keep unique elements; dictionaries map keys to values. A string is immutable even though individual characters can be accessed by index.</div>
+</section>
+
+<section class="unit" id="files"><span class="tag">TOPIC 5</span><h2>File Operations</h2><p>File handling allows a program to store information permanently and retrieve it later. The general sequence is open a file, perform the required operation, and close the file. The <code>with</code> statement is recommended because it closes the file automatically when the block finishes.</p>
+<h3>5.1 File modes</h3><div class="table-wrap"><table><thead><tr><th>Mode</th><th>Meaning</th><th>Important behaviour</th></tr></thead><tbody><tr><td><code>r</code></td><td>Read</td><td>File must already exist.</td></tr><tr><td><code>w</code></td><td>Write</td><td>Creates a file or overwrites existing contents.</td></tr><tr><td><code>a</code></td><td>Append</td><td>Adds data at the end; creates the file if needed.</td></tr><tr><td><code>x</code></td><td>Exclusive creation</td><td>Fails if the file already exists.</td></tr><tr><td><code>b</code></td><td>Binary mode</td><td>Used with another mode, such as <code>rb</code>.</td></tr><tr><td><code>t</code></td><td>Text mode</td><td>Default mode for ordinary text files.</td></tr></tbody></table></div>
+<h3>5.2 Writing and reading a text file</h3><pre><code># Write
+with open("notes.txt", "w", encoding="utf-8") as file:
+    file.write("Python programming\n")
+    file.write("File handling example\n")
+
+# Read
+with open("notes.txt", "r", encoding="utf-8") as file:
+    content = file.read()
+
+print(content)</code></pre>
+<h3>5.3 Append and line-by-line reading</h3><pre><code>with open("marks.txt", "a", encoding="utf-8") as file:
+    file.write("Kumar,85\n")
+
+with open("marks.txt", "r", encoding="utf-8") as file:
+    for line in file:
+        print(line.strip())</code></pre>
+<h3>5.4 CSV files</h3><p>CSV (comma-separated values) files store tabular data as rows. Python's <code>csv</code> module provides tools to read and write CSV data.</p><pre><code>import csv
+
+rows = [
+    ["Name", "Mark"],
+    ["Anu", 88],
+    ["Kumar", 76]
+]
+
+with open("students.csv", "w", newline="", encoding="utf-8") as file:
+    writer = csv.writer(file)
+    writer.writerows(rows)
+
+with open("students.csv", "r", newline="", encoding="utf-8") as file:
+    reader = csv.reader(file)
+    for row in reader:
+        print(row)</code></pre>
+<h3>5.5 OS and sys modules</h3><p>The <code>os</code> module provides functions for interacting with the operating system, such as working with directories and file paths. The <code>sys</code> module provides access to interpreter and system-specific parameters.</p><pre><code>import os
+import sys
+
+print("Current directory:", os.getcwd())
+print("Python version:", sys.version)</code></pre>
+</section>
+
+<section class="unit" id="packages"><span class="tag">TOPIC 6</span><h2>Modules and Packages</h2><p>A <b>module</b> is a Python file containing reusable definitions and statements. A <b>package</b> organises related modules. Importing a module makes its functions and classes available to a program.</p><pre><code>import math
+print(math.sqrt(81))
+print(math.pi)
+
+from math import factorial
+print(factorial(5))</code></pre>
+<div class="table-wrap"><table><thead><tr><th>Package</th><th>Main use</th><th>Typical engineering application</th></tr></thead><tbody><tr><td>NumPy</td><td>Numerical arrays and mathematical operations.</td><td>Vector calculations, matrices and numerical data.</td></tr><tr><td>SciPy</td><td>Scientific algorithms.</td><td>Optimisation, integration, interpolation and signal processing.</td></tr><tr><td>Pandas</td><td>Tabular data handling and analysis.</td><td>Reading experimental data, cleaning data and summarising results.</td></tr><tr><td>Scikit-learn</td><td>Machine-learning tools.</td><td>Classification, regression, clustering and model evaluation.</td></tr></tbody></table></div>
+<h3>Built-in, standard and user-defined modules</h3><ul><li><b>Built-in functions:</b> functions available directly, such as <code>print()</code>, <code>len()</code> and <code>type()</code>.</li><li><b>Standard library modules:</b> modules supplied with Python, such as <code>math</code>, <code>os</code>, <code>sys</code> and <code>csv</code>.</li><li><b>User-defined modules:</b> Python files created by the programmer and imported into another program.</li><li><b>Third-party packages:</b> packages installed separately, such as NumPy, SciPy, Pandas and Scikit-learn.</li></ul>
+<div class="callout green"><b>Practical preparation:</b> For every package named in the syllabus, know its purpose, import statement and at least one small application. Do not memorise a package name without understanding what problem it solves.</div>
+</section>
+
+<section class="panel" id="exam"><span class="tag">EXAM PROGRAM-WRITING METHOD</span><h2>How to present a programming answer</h2><ol class="steps"><li><b>State the logic:</b> explain what the program must calculate or decide.</li><li><b>Write the algorithm:</b> use short, numbered steps.</li><li><b>Write the program:</b> use meaningful variable names, correct indentation and comments where useful.</li><li><b>Show sample input and output:</b> choose values that make the result easy to verify.</li><li><b>Explain the key statements:</b> describe the condition, loop, function or data structure that performs the main task.</li><li><b>Test boundary cases:</b> consider zero, negative values, empty input or values at the condition limit where relevant.</li></ol><div class="callout amber"><b>Common mistakes:</b> incorrect indentation; forgetting that <code>input()</code> returns a string; off-by-one errors in <code>range()</code>; missing a recursion base case; modifying a collection while iterating over it; and opening a file in write mode when the intention is to append.</div></section>
+<section class="panel" id="practice"><span class="tag">PRACTICE SET</span><h2>Programs every student should practise</h2><p>Write each program yourself before checking a reference solution. For every program, prepare its algorithm and test at least two different inputs.</p><div class="two"><div class="mini"><b>Fundamentals</b><ol><li>Area and perimeter of a rectangle.</li><li>Convert Celsius to Fahrenheit.</li><li>Swap two values.</li><li>Calculate simple interest.</li></ol></div><div class="mini"><b>Control structures</b><ol><li>Check even or odd.</li><li>Find the largest of three numbers.</li><li>Check prime number.</li><li>Generate multiplication table.</li></ol></div><div class="mini"><b>Functions and collections</b><ol><li>Factorial using recursion.</li><li>Find maximum and minimum in a list.</li><li>Count vowels in a string.</li><li>Sort a list of marks.</li></ol></div><div class="mini"><b>Files and packages</b><ol><li>Write and read student records.</li><li>Append a new record to a file.</li><li>Read a CSV file and display rows.</li><li>Use NumPy to perform array calculations.</li></ol></div></div></section>
+<section class="panel" id="revision"><span class="tag">LAST-DAY REVISION</span><h2>Quick revision table</h2><div class="table-wrap"><table><thead><tr><th>Concept</th><th>Remember</th></tr></thead><tbody><tr><td>Algorithm</td><td>Finite, clear sequence of steps.</td></tr><tr><td>Variable</td><td>Name referring to a value; assignment creates/binds it.</td></tr><tr><td>Input</td><td><code>input()</code> returns a string; convert for arithmetic.</td></tr><tr><td>Selection</td><td><code>if</code>, <code>elif</code>, <code>else</code>.</td></tr><tr><td>Iteration</td><td><code>for</code> iterates; <code>while</code> repeats while condition is true.</td></tr><tr><td>Function</td><td>Reusable block defined with <code>def</code>.</td></tr><tr><td>Recursion</td><td>Function calls itself; requires a base case.</td></tr><tr><td>List</td><td>Ordered and mutable.</td></tr><tr><td>Tuple</td><td>Ordered and immutable.</td></tr><tr><td>Set</td><td>Unique elements.</td></tr><tr><td>Dictionary</td><td>Key-value pairs.</td></tr><tr><td>File modes</td><td><code>r</code> read, <code>w</code> write/overwrite, <code>a</code> append.</td></tr><tr><td>Packages</td><td>NumPy, SciPy, Pandas, Scikit-learn.</td></tr></tbody></table></div></section>
+<section class="panel" id="sources"><span class="tag">SOURCE & REFERENCES</span><h2>Official syllabus basis</h2><p><b>Primary source:</b> Anna University R-2025 Undergraduate Curriculum (Non-Autonomous Affiliated Institutions), course CS25C02 — Computer Programming: Python. The official syllabus topics are Introduction to Python, Control Structures, Functions, Strings &amp; Collections, File Operations and Packages. The official curriculum also lists practical exercises and project work.</p><ul><li><a href="https://cac.annauniv.edu/aidetails/afug_2025_fu/Civil/B.Tech.%20Agricultural%20Engineering.pdf" target="_blank" rel="noopener">Official R-2025 Agricultural Engineering curriculum PDF — CS25C02</a></li><li><a href="https://docs.python.org/3/tutorial/" target="_blank" rel="noopener">Python official tutorial</a></li><li><a href="https://docs.python.org/3/library/" target="_blank" rel="noopener">Python standard library reference</a></li><li><a href="https://numpy.org/doc/stable/user/quickstart.html" target="_blank" rel="noopener">NumPy quickstart</a></li><li><a href="https://pandas.pydata.org/docs/getting_started/intro_tutorials/" target="_blank" rel="noopener">Pandas introductory tutorials</a></li></ul><div class="callout amber"><b>Editorial note:</b> The syllabus sequence and named topics are taken from the official curriculum. The worked examples and teaching explanations are supplementary study material. Confirm software versions and practical requirements with your department.</div></section>
+</main></div><div class="footer">ACADRIX is an independent student learning resource and is not affiliated with Anna University. Check the curriculum applicable to your admission batch and any official amendments.</div></div></body></html>
